@@ -8,6 +8,7 @@ from utils.cli import render_json, render_table
 from utils.sources import resolve_sources, source_choices
 
 COL_GROUP_MAP = {
+    'default': ('source', 'id', 'name', 'size', 'status', 'mass', 'beam', 'height', 'length'),
     'meta': ('source',),
     'basic': ('name', 'size'),
     'manufacturer': ('manufacturer_name', 'manufacturer_code'),
@@ -15,23 +16,10 @@ COL_GROUP_MAP = {
     'dimensions': ('mass', 'beam', 'height', 'length'),
     'flight': ('max_scm', 'max_speed'),
     'cargo': ('crew', 'max_crew', 'min_crew'),
-    'weapons': ('num_weapons', 'num_guns', 'num_turrets', 'num_missiles', 'guns', 'turrets', 'missiles'),
     'prices': ('buy_auec', 'buy_usd', 'rent_auec'),
     'insurance': ('ins_std_claim_time', 'ins_exp_claim_time', 'ins_exp_cost'),
     'capabilities': ('has_quantum_drive', 'has_gravlev'),
 }
-COL_GROUP_MAP['all'] = \
-    COL_GROUP_MAP['meta'] + \
-    COL_GROUP_MAP['basic'] + \
-    COL_GROUP_MAP['manufacturer'] + \
-    COL_GROUP_MAP['store'] + \
-    COL_GROUP_MAP['dimensions'] + \
-    COL_GROUP_MAP['flight'] + \
-    COL_GROUP_MAP['cargo'] + \
-    COL_GROUP_MAP['weapons'] + \
-    COL_GROUP_MAP['prices'] + \
-    COL_GROUP_MAP['insurance'] + \
-    COL_GROUP_MAP['capabilities']
 
 
 @ click.group()
@@ -64,7 +52,7 @@ def dump(sources, names, cols, fmt, colgroups):
     for group in colgroups:
         cols += COL_GROUP_MAP[group]
     if len(cols) == 0:
-        cols += COL_GROUP_MAP['all']
+        cols += COL_GROUP_MAP['default']
     if fmt == 'json':
         print(render_json(exports, cols))
     elif fmt == 'table':

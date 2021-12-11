@@ -52,13 +52,6 @@ def item_to_ship(item):
         'max_speed': decimal(item['afterburner_speed'], True),
         'scm_speed': decimal(item['scm_speed'], True),
         'has_quantum_drive': has_quantum_drive(item),
-        'num_weapons': mount_count(item),
-        'num_guns': mount_count(item, 'weapons'),
-        'num_turrets': mount_count(item, 'turrets'),
-        'num_missiles': mount_count(item, 'missiles'),
-        'guns': mount_sizes(item, 'weapons'),
-        'turrets': mount_sizes(item, 'turrets'),
-        'missiles': mount_sizes(item, 'missiles'),
     }
 
 
@@ -68,43 +61,6 @@ def has_quantum_drive(item):
         .get('RSIPropulsion', {}) \
         .get('quantum_drives', [])
     return len(drives) > 0
-
-
-def mount_count(item, groupFilter=None):
-    mounts = __mounts(item, groupFilter)
-    return sum([mount['count'] for mount in mounts])
-
-
-def mount_sizes(item, groupFilter=None):
-    sizes = []
-    for mount in __mounts(item, groupFilter):
-        for _ in range(mount['count']):
-            sizes.append(mount['size'])
-    sizes.sort()
-    return sizes
-
-
-def __mounts(item, groupFilter=None):
-    groups = ('weapons', 'turrets', 'missiles')
-    item = item.get('compiled', {}).get('RSIWeapon', {})
-    mounts = []
-    for group in groups:
-        if groupFilter is not None and group != groupFilter:
-            continue
-        for mount in item.get(group, []):
-            count = int(mount['mounts'])
-            mounts.append({'size': __mount_size(mount), 'count': count})
-    return mounts
-
-
-def __mount_size(mount):
-    value = mount.get('size', '-')
-    if value == '-':
-        value = 0
-    size = int(value)
-    if size < 0 or size > 12:
-        raise ValueError('Unknown mount size: %s', size)
-    return size
 
 
 if __name__ == '__main__':
