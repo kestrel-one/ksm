@@ -27,6 +27,7 @@ ALL_COLS = [col for group in COL_GROUP_MAP for col in COL_GROUP_MAP[group]]
 @ click.pass_context
 def cli(ctx):
     ctx.max_content_width = 120
+    ctx.help_option_names = ['-h', '--help']
 
 
 @ cli.command()
