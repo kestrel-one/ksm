@@ -8,6 +8,7 @@ RE_MANUFACTURER_PREFIX = re.compile(
 RE_SHIP_CLASS_SEPARATOR = re.compile(r'^(Aurora|Cyclone)-([A-Z]{1,2})$')
 RE_G12_DASH_NAME = re.compile(r'^G12-([A-Z]{1,2})$')
 RE_CRUSADER_STAR = re.compile(r' (Starlifter|Star Runner)$')
+RE_STARFIGHTER = re.compile(r'^Ares Star Fighter')
 RE_URL_PREFIX = re.compile(r'^[a-z0-9]*:\/\/', re.IGNORECASE)
 
 SHIP_RENAME_MAP = {
@@ -65,6 +66,7 @@ def ship_name(name):
     name = RE_SHIP_CLASS_SEPARATOR.sub('\\1 \\2', name)
     name = RE_G12_DASH_NAME.sub(lambda m: 'G12' + m.group(1).lower(), name)
     name = RE_CRUSADER_STAR.sub('', name)
+    name = RE_STARFIGHTER.sub('Ares', name)
     name = SHIP_RENAME_MAP.get(name, name)
     return None if is_skippable_ship_name(name) else name
 

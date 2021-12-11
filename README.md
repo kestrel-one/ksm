@@ -24,17 +24,16 @@ all of the available fields.
 
 ```
 $ ./ksm.py dump all -n '*hornet*' -f table
-$ ./ksm.py dump all -n '*hornet*' -f table
 +------------+-----+--------------------------------+-------+--------------+---------+------+--------+--------+
 |   source   |  id |              name              |  size |    status    |   mass  | beam | height | length |
 +------------+-----+--------------------------------+-------+--------------+---------+------+--------+--------+
-| hardpoint  |     |           F7A Hornet           | small |              | 73317.0 |      |        |        |
-| hardpoint  |     |           F7C Hornet           | small |              | 74132.0 |      |        |        |
-| hardpoint  |     |      F7C Hornet Wildfire       | small |              | 74132.0 |      |        |        |
-| hardpoint  |     |       F7C-M Super Hornet       | small |              | 78886.0 |      |        |        |
-| hardpoint  |     | F7C-M Super Hornet Heartseeker | small |              | 78886.0 |      |        |        |
-| hardpoint  |     |      F7C-R Hornet Tracker      | small |              | 74197.0 |      |        |        |
-| hardpoint  |     |       F7C-S Hornet Ghost       | small |              | 73724.0 |      |        |        |
+| hardpoint  |  37 |           F7A Hornet           | small |  In Concept  | 73317.0 |      |        |        |
+| hardpoint  |  11 |           F7C Hornet           | small | Flight Ready | 74132.0 |      |        |        |
+| hardpoint  | 122 |      F7C Hornet Wildfire       | small | Flight Ready | 74132.0 |      |        |        |
+| hardpoint  |  15 |       F7C-M Super Hornet       | small | Flight Ready | 78886.0 |      |        |        |
+| hardpoint  | 177 | F7C-M Super Hornet Heartseeker | small | Flight Ready | 78886.0 |      |        |        |
+| hardpoint  |  14 |      F7C-R Hornet Tracker      | small | Flight Ready | 74197.0 |      |        |        |
+| hardpoint  |  13 |       F7C-S Hornet Ghost       | small | Flight Ready | 73724.0 |      |        |        |
 |    rsi     |  37 |           F7A Hornet           | small |  In Concept  | 73317.0 | 22.0 |  7.0   |  22.5  |
 |    rsi     |  11 |           F7C Hornet           | small | Flight Ready | 73535.0 | 21.5 |  6.5   |  22.5  |
 |    rsi     | 122 |      F7C Hornet Wildfire       | small | Flight Ready | 73535.0 | 21.5 |  6.5   |  22.5  |
@@ -42,23 +41,23 @@ $ ./ksm.py dump all -n '*hornet*' -f table
 |    rsi     | 177 | F7C-M Super Hornet Heartseeker | small | Flight Ready | 78466.0 | 24.0 |  6.5   |  25.5  |
 |    rsi     |  14 |      F7C-R Hornet Tracker      | small | Flight Ready | 73497.0 | 21.5 |  6.5   |  22.5  |
 |    rsi     |  13 |       F7C-S Hornet Ghost       | small | Flight Ready | 73454.0 | 21.5 |  6.5   |  22.5  |
-| scunpacked |     |           F7A Hornet           | small |              | 73317.0 |      |        |        |
-| scunpacked |     |           F7A Hornet           | small |              | 74132.0 |      |        |        |
-| scunpacked |     |           F7C Hornet           | small |              | 74132.0 |      |        |        |
-| scunpacked |     |      F7C Hornet Wildfire       | small |              | 74132.0 |      |        |        |
-| scunpacked |     |       F7C-M Super Hornet       | small |              | 78886.0 |      |        |        |
-| scunpacked |     | F7C-M Super Hornet Heartseeker | small |              | 78670.0 |      |        |        |
-| scunpacked |     |      F7C-R Hornet Tracker      | small |              | 74197.0 |      |        |        |
-| scunpacked |     |       F7C-S Hornet Ghost       | small |              | 73724.0 |      |        |        |
-|    spat    |     |           F7C Hornet           |       |              |         |      |        |        |
-|    spat    |     |       F7C-M Super Hornet       |       |              |         |      |        |        |
-|    uex     |     |           F7A Hornet           |       |              |         |      |        |        |
-|    uex     |     |           F7C Hornet           |       |              |         |      |        |        |
-|    uex     |     |      F7C Hornet Wildfire       |       |              |         |      |        |        |
-|    uex     |     |       F7C-M Super Hornet       |       |              |         |      |        |        |
-|    uex     |     | F7C-M Super Hornet Heartseeker |       |              |         |      |        |        |
-|    uex     |     |      F7C-R Hornet Tracker      |       |              |         |      |        |        |
-|    uex     |     |       F7C-S Hornet Ghost       |       |              |         |      |        |        |
+| scunpacked |  37 |           F7A Hornet           | small |  In Concept  | 73317.0 |      |        |        |
+| scunpacked |  37 |           F7A Hornet           | small |  In Concept  | 74132.0 |      |        |        |
+| scunpacked |  11 |           F7C Hornet           | small | Flight Ready | 74132.0 |      |        |        |
+| scunpacked | 122 |      F7C Hornet Wildfire       | small | Flight Ready | 74132.0 |      |        |        |
+| scunpacked |  15 |       F7C-M Super Hornet       | small | Flight Ready | 78886.0 |      |        |        |
+| scunpacked | 177 | F7C-M Super Hornet Heartseeker | small | Flight Ready | 78670.0 |      |        |        |
+| scunpacked |  14 |      F7C-R Hornet Tracker      | small | Flight Ready | 74197.0 |      |        |        |
+| scunpacked |  13 |       F7C-S Hornet Ghost       | small | Flight Ready | 73724.0 |      |        |        |
+|    spat    |  11 |           F7C Hornet           |       | Flight Ready |         |      |        |        |
+|    spat    |  15 |       F7C-M Super Hornet       |       | Flight Ready |         |      |        |        |
+|    uex     |  37 |           F7A Hornet           |       |  In Concept  |         |      |        |        |
+|    uex     |  11 |           F7C Hornet           |       | Flight Ready |         |      |        |        |
+|    uex     | 122 |      F7C Hornet Wildfire       |       | Flight Ready |         |      |        |        |
+|    uex     |  15 |       F7C-M Super Hornet       |       | Flight Ready |         |      |        |        |
+|    uex     | 177 | F7C-M Super Hornet Heartseeker |       | Flight Ready |         |      |        |        |
+|    uex     |  14 |      F7C-R Hornet Tracker      |       | Flight Ready |         |      |        |        |
+|    uex     |  13 |       F7C-S Hornet Ghost       |       | Flight Ready |         |      |        |        |
 +------------+-----+--------------------------------+-------+--------------+---------+------+--------+--------+
 ```
 

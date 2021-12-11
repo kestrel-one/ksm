@@ -4,8 +4,9 @@ import click
 import re
 import sys
 
+from fields.normalize import Index, inherit_field
 from utils.cli import render_json, render_table
-from utils.sources import resolve_sources, source_choices
+from utils.sources import all_sources, resolve_sources, source_choices
 
 COL_GROUP_MAP = {
     'default': ('source', 'id', 'name', 'size', 'status', 'mass', 'beam', 'height', 'length'),
@@ -46,10 +47,8 @@ def update(sources):
 @ click.option('-f', '--fmt', default='json', type=click.Choice(['json', 'table']))
 @ click.option('-g', '--colgroups', multiple=True, type=click.Choice(COL_GROUP_MAP.keys()))
 def dump(sources, names, cols, fmt, colgroups):
-    ships = []
-    for module_name, module in resolve_sources(sources):
-        ships.extend([s for s in module.export() if match_name(s, names)])
-    ships.sort(key=lambda k: (k['source'], k['name']))
+    matched_sources = resolve_sources(sources)
+    ships = [ship for ship in export_all() if match_name(ship, names) and match_source(ship, matched_sources)]
     exports = [filter_cols(ship, cols) for ship in ships]
     for group in colgroups:
         cols += COL_GROUP_MAP[group]
@@ -59,6 +58,17 @@ def dump(sources, names, cols, fmt, colgroups):
         print(render_json(exports, cols))
     elif fmt == 'table':
         print(render_table(exports, cols))
+
+
+def export_all():
+    ships = []
+    for module_name, module in all_sources:
+        ships.extend([s for s in module.export()])
+    index = Index(ships)
+    inherit_field(index, ships, 'rsi', 'id')
+    inherit_field(index, ships, 'rsi', 'status')
+    ships.sort(key=lambda k: (k['source'], k['name']))
+    return ships
 
 
 def filter_cols(ship, cols):
@@ -79,6 +89,15 @@ def match_name(ship, allowed_names):
         find_name = name.lower()
         ship_name = ship['name'].lower()
         if match_str(find_name, ship_name):
+            return True
+    return False
+
+
+def match_source(ship, allowed_sources):
+    if len(allowed_sources) == 0:
+        return True
+    for name, _ in allowed_sources:
+        if ship['source'] == name:
             return True
     return False
 
