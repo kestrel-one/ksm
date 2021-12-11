@@ -20,6 +20,7 @@ COL_GROUP_MAP = {
     'insurance': ('ins_std_claim_time', 'ins_exp_claim_time', 'ins_exp_cost'),
     'capabilities': ('has_quantum_drive', 'has_gravlev'),
 }
+ALL_COLS = [col for group in COL_GROUP_MAP for col in COL_GROUP_MAP[group]]
 
 
 @ click.group()
@@ -40,7 +41,7 @@ def update(sources):
 @ cli.command()
 @ click.argument('sources', required=True, nargs=-1, type=source_choices)
 @ click.option('-n', '--names', multiple=True, type=str)
-@ click.option('-c', '--cols', multiple=True, type=str)
+@ click.option('-c', '--cols', multiple=True, type=click.Choice(ALL_COLS))
 @ click.option('-f', '--fmt', default='json', type=click.Choice(['json', 'table']))
 @ click.option('-g', '--colgroups', multiple=True, type=click.Choice(COL_GROUP_MAP.keys()))
 def dump(sources, names, cols, fmt, colgroups):
