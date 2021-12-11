@@ -49,20 +49,19 @@ $ ./ksm.py dump all -n '*hornet*' -f table
 | scunpacked | 177 | F7C-M Super Hornet Heartseeker | small | Flight Ready | 78670.0 |      |        |        |
 | scunpacked |  14 |      F7C-R Hornet Tracker      | small | Flight Ready | 74197.0 |      |        |        |
 | scunpacked |  13 |       F7C-S Hornet Ghost       | small | Flight Ready | 73724.0 |      |        |        |
-|    spat    |  11 |           F7C Hornet           |       | Flight Ready |         |      |        |        |
-|    spat    |  15 |       F7C-M Super Hornet       |       | Flight Ready |         |      |        |        |
-|    uex     |  37 |           F7A Hornet           |       |  In Concept  |         |      |        |        |
-|    uex     |  11 |           F7C Hornet           |       | Flight Ready |         |      |        |        |
-|    uex     | 122 |      F7C Hornet Wildfire       |       | Flight Ready |         |      |        |        |
-|    uex     |  15 |       F7C-M Super Hornet       |       | Flight Ready |         |      |        |        |
-|    uex     | 177 | F7C-M Super Hornet Heartseeker |       | Flight Ready |         |      |        |        |
-|    uex     |  14 |      F7C-R Hornet Tracker      |       | Flight Ready |         |      |        |        |
-|    uex     |  13 |       F7C-S Hornet Ghost       |       | Flight Ready |         |      |        |        |
+|    spat    |  11 |           F7C Hornet           | small | Flight Ready |         |      |        |        |
+|    spat    |  15 |       F7C-M Super Hornet       | small | Flight Ready |         |      |        |        |
+|    uex     |  37 |           F7A Hornet           | small |  In Concept  |         |      |        |        |
+|    uex     |  11 |           F7C Hornet           | small | Flight Ready |         |      |        |        |
+|    uex     | 122 |      F7C Hornet Wildfire       | small | Flight Ready |         |      |        |        |
+|    uex     |  15 |       F7C-M Super Hornet       | small | Flight Ready |         |      |        |        |
+|    uex     | 177 | F7C-M Super Hornet Heartseeker | small | Flight Ready |         |      |        |        |
+|    uex     |  14 |      F7C-R Hornet Tracker      | small | Flight Ready |         |      |        |        |
+|    uex     |  13 |       F7C-S Hornet Ghost       | small | Flight Ready |         |      |        |        |
 +------------+-----+--------------------------------+-------+--------------+---------+------+--------+--------+
 ```
 
 TODO:
 
-- Merge RSI IDs into all data sets
 - Data validation and repair tooling
 - CSV export format

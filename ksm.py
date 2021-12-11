@@ -46,9 +46,12 @@ def update(sources):
 @ click.option('-c', '--cols', multiple=True, type=click.Choice(ALL_COLS))
 @ click.option('-f', '--fmt', default='json', type=click.Choice(['json', 'table']))
 @ click.option('-g', '--colgroups', multiple=True, type=click.Choice(COL_GROUP_MAP.keys()))
-def dump(sources, names, cols, fmt, colgroups):
+@ click.option('-s', '--sort', default=('source.asc', 'name.asc'), multiple=True, type=str, help='[column].[asc|desc] (eg: source.desc)')
+def dump(sources, names, cols, fmt, colgroups, sort):
     matched_sources = resolve_sources(sources)
-    ships = [ship for ship in export_all() if match_name(ship, names) and match_source(ship, matched_sources)]
+    ships = [
+        ship for ship in export_all(sort)
+        if match_name(ship, names) and match_source(ship, matched_sources)]
     exports = [filter_cols(ship, cols) for ship in ships]
     for group in colgroups:
         cols += COL_GROUP_MAP[group]
@@ -60,14 +63,13 @@ def dump(sources, names, cols, fmt, colgroups):
         print(render_table(exports, cols))
 
 
-def export_all():
+def export_all(sort_keys):
     ships = []
     for module_name, module in all_sources:
         ships.extend([s for s in module.export()])
     index = Index(ships)
     inherit_field(index, ships, 'rsi', 'id')
-    inherit_field(index, ships, 'rsi', 'status')
-    ships.sort(key=lambda k: (k['source'], k['name']))
+    ships.sort(key=lambda k: create_sort_key(k, sort_keys))
     return ships
 
 
@@ -86,9 +88,7 @@ def match_name(ship, allowed_names):
     if len(allowed_names) == 0:
         return True
     for name in allowed_names:
-        find_name = name.lower()
-        ship_name = ship['name'].lower()
-        if match_str(find_name, ship_name):
+        if match_str(name.lower(), ship['name'].lower()):
             return True
     return False
 
@@ -109,8 +109,30 @@ def match_str(needle, haystack):
     return needle == haystack
 
 
+def create_sort_key(ship, sort_keys):
+    resolved_keys = []
+    for key in sort_keys:
+        key_name, order = (key if '.' in key else key + '.asc').split('.')
+        resolved_keys.append(str_sort_key(ship[key_name], order))
+    return resolved_keys
+
+
+def str_sort_key(value, order):
+    if order == 'asc':
+        return value
+    if order == 'desc':
+        return reverse_sort_key(value)
+    raise ValueError('Unknown sort order: %s' % order)
+
+
+def reverse_sort_key(value):
+    t = type(value)
+    if t == str:
+        return [255 - ord(c) for c in list(value)]
+    elif t == int or t == float:
+        return -value
+    return ValueError('Cannot reverse key of type: %s' % t)
+
+
 if __name__ == '__main__':
-    if len(sys.argv) == 1:
-        cli.main(['--help'])
-    else:
-        cli()
+    cli(['--help'] if len(sys.argv) == 1 else None)
