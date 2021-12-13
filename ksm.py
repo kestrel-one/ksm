@@ -52,11 +52,11 @@ def dump(sources, names, cols, fmt, colgroups, sort):
     ships = [
         ship for ship in export_all(sort)
         if match_name(ship, names) and match_source(ship, matched_sources)]
-    exports = [filter_cols(ship, cols) for ship in ships]
-    for group in colgroups:
-        cols += COL_GROUP_MAP[group]
+    group_cols = [col for group in colgroups for col in COL_GROUP_MAP[group]]
+    cols = tuple(group_cols) + cols
     if len(cols) == 0:
         cols += COL_GROUP_MAP['default']
+    exports = [filter_cols(ship, cols) for ship in ships]
     if fmt == 'json':
         print(render_json(exports, cols))
     elif fmt == 'table':
