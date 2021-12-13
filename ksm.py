@@ -5,7 +5,7 @@ import re
 import sys
 
 from fields.normalize import Index, inherit_field
-from utils.cli import render_json, render_table
+from utils.cli import render_csv, render_json, render_table
 from utils.sources import all_sources, resolve_sources, source_choices
 
 COL_GROUP_MAP = {
@@ -21,7 +21,14 @@ COL_GROUP_MAP = {
     'insurance': ('ins_std_claim_time', 'ins_exp_claim_time', 'ins_exp_cost'),
     'capabilities': ('has_quantum_drive', 'has_gravlev'),
 }
-ALL_COLS = [col for group in COL_GROUP_MAP for col in COL_GROUP_MAP[group]]
+ALL_COLS = tuple(col for group in COL_GROUP_MAP for col in COL_GROUP_MAP[group])
+COL_GROUP_MAP['all'] = ALL_COLS
+
+RENDERERS = {
+    'csv': render_csv,
+    'json': render_json,
+    'table': render_table,
+}
 
 
 @ click.group()
@@ -44,7 +51,7 @@ def update(sources):
 @ click.argument('sources', required=True, nargs=-1, type=source_choices)
 @ click.option('-n', '--names', multiple=True, type=str)
 @ click.option('-c', '--cols', multiple=True, type=click.Choice(ALL_COLS))
-@ click.option('-f', '--fmt', default='json', type=click.Choice(['json', 'table']))
+@ click.option('-f', '--fmt', default='json', type=click.Choice(RENDERERS.keys()))
 @ click.option('-g', '--colgroups', multiple=True, type=click.Choice(COL_GROUP_MAP.keys()))
 @ click.option('-s', '--sort', default=('source.asc', 'name.asc'), multiple=True, type=str, help='[column].[asc|desc] (eg: source.desc)')
 def dump(sources, names, cols, fmt, colgroups, sort):
@@ -57,10 +64,7 @@ def dump(sources, names, cols, fmt, colgroups, sort):
     if len(cols) == 0:
         cols += COL_GROUP_MAP['default']
     exports = [filter_cols(ship, cols) for ship in ships]
-    if fmt == 'json':
-        print(render_json(exports, cols))
-    elif fmt == 'table':
-        print(render_table(exports, cols))
+    print(RENDERERS[fmt](exports, cols))
 
 
 def export_all(sort_keys):

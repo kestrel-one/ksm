@@ -64,4 +64,3 @@ $ ./ksm.py dump all -n '*hornet*' -f table
 TODO:
 
 - Data validation and repair tooling
-- CSV export format
