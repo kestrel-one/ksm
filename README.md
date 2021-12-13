@@ -131,6 +131,14 @@ values.
 The `validate` subcommand runs some simple validate checks on the exported data.
 It's a good idea to run the validator after running the update subcommand.
 
+Thanks
+------
+
+KSM only aggregates, normalizes, and acts as a CLI to the data. A big thanks
+for the hard work by [scunpacked](https://scunpacked.com/),
+[SPAT](https://docs.google.com/spreadsheets/d/11nI-wLlRjDpsshkY8VLZkHh2jd2mCmWJTIE2VzqZ7ss),
+and [UEX](https://uexcorp.space/) to gather, tweak, and test Star Citizen data.
+
 Just want the data?
 -------------------
 
