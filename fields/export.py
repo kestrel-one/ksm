@@ -29,6 +29,8 @@ FIELD_SOURCES = {
     'id': ('rsi',),
     'url': ('rsi',),
     'status': ('rsi',),
+    'min_crew': ('spat', 'scunpacked', 'rsi', 'uex'),
+    'max_crew': ('spat', 'scunpacked', 'rsi', 'uex'),
 }
 
 
