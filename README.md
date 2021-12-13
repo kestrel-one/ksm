@@ -1,55 +1,141 @@
-WIP.
+Kestrel's Ship Matrix (KSM)
+===========================
 
-You'll need to setup the virtual environment first:
+Current Release: 2.1.0
+
+KSM is a script that outputs a list of all ships in Star Citizen. It can be used
+to seed your own database of Star Citizen ships, imported into a spreadsheet for
+analytics uses, or just get an idea of what ships are available in Star Citizen.
+
+Features
+--------
+
+- Includes concept and in production ships
+- Combines data from multiple sources (scunpacked, SPAT, etc)
+- Supports JSON, ASCII table, and CSV output formats
+- Supports basic display options (filtering, sorting)
+- Easy to add more sources as they become available
+
+Requirements
+------------
+
+- [Python 3](https://www.python.org/downloads/)
+- [virtualenv](https://virtualenv.pypa.io/en/latest/)
+
+Setup
+-----
+
+Create a virtual enviornment:
 
 ```bash
-$ make environment && . activate
+$ make environment
+$ . activate
 ```
 
-To download the latest versions of sources use the update command. Updated
-sources will modify data files so don't forget to commit those.
+Test that the command is working:
 
 ```
-./ksm.py update all  # Update all sources
-./ksm.py update spat # Update SPAT only
+$ ./ksm.py --version
+ksm.py, version 2.1.0
 ```
 
-You can list out the normalized data using the dump command. See the command
-help for options. Below is an example usage of the command along with the
-output.
-
-It's querying for all ships containing "hornet" in the name. Display output is
-in ASCII table format. Default fields are shown. See the -g and -c options for
-all of the available fields.
+Use the --help flag for more info:
 
 ```
-$ ./ksm.py dump all -n '*hornet*' -f table
-+------------+-----+--------------------------------+-------+--------------+---------+------+--------+--------+
-|   source   |  id |              name              |  size |    status    |   mass  | beam | height | length |
-+------------+-----+--------------------------------+-------+--------------+---------+------+--------+--------+
-|    rsi     |  37 |           F7A Hornet           | small |  In Concept  | 73317.0 | 22.0 |  7.0   |  22.5  |
-|    rsi     |  11 |           F7C Hornet           | small | Flight Ready | 73535.0 | 21.5 |  6.5   |  22.5  |
-|    rsi     | 122 |      F7C Hornet Wildfire       | small | Flight Ready | 73535.0 | 21.5 |  6.5   |  22.5  |
-|    rsi     |  15 |       F7C-M Super Hornet       | small | Flight Ready | 78466.0 | 24.0 |  6.5   |  25.5  |
-|    rsi     | 177 | F7C-M Super Hornet Heartseeker | small | Flight Ready | 78466.0 | 24.0 |  6.5   |  25.5  |
-|    rsi     |  14 |      F7C-R Hornet Tracker      | small | Flight Ready | 73497.0 | 21.5 |  6.5   |  22.5  |
-|    rsi     |  13 |       F7C-S Hornet Ghost       | small | Flight Ready | 73454.0 | 21.5 |  6.5   |  22.5  |
-| scunpacked |  37 |           F7A Hornet           | small |              | 73317.0 |      |        |        |
-| scunpacked |  37 |           F7A Hornet           | small |              | 74132.0 |      |        |        |
-| scunpacked |  11 |           F7C Hornet           | small |              | 74132.0 |      |        |        |
-| scunpacked | 122 |      F7C Hornet Wildfire       | small |              | 74132.0 |      |        |        |
-| scunpacked |  15 |       F7C-M Super Hornet       | small |              | 78886.0 |      |        |        |
-| scunpacked | 177 | F7C-M Super Hornet Heartseeker | small |              | 78670.0 |      |        |        |
-| scunpacked |  14 |      F7C-R Hornet Tracker      | small |              | 74197.0 |      |        |        |
-| scunpacked |  13 |       F7C-S Hornet Ghost       | small |              | 73724.0 |      |        |        |
-|    spat    |  11 |           F7C Hornet           |       |              |         |      |        |        |
-|    spat    |  15 |       F7C-M Super Hornet       |       |              |         |      |        |        |
-|    uex     |  37 |           F7A Hornet           |       |              |         |      |        |        |
-|    uex     |  11 |           F7C Hornet           |       |              |         |      |        |        |
-|    uex     | 122 |      F7C Hornet Wildfire       |       |              |         |      |        |        |
-|    uex     |  15 |       F7C-M Super Hornet       |       |              |         |      |        |        |
-|    uex     | 177 | F7C-M Super Hornet Heartseeker |       |              |         |      |        |        |
-|    uex     |  14 |      F7C-R Hornet Tracker      |       |              |         |      |        |        |
-|    uex     |  13 |       F7C-S Hornet Ghost       |       |              |         |      |        |        |
-+------------+-----+--------------------------------+-------+--------------+---------+------+--------+--------+
+$ ./ksm --help
 ```
+
+Displaying Ships
+----------------
+
+Display a list of all Hornets as an ASCII table with basic fields:
+
+```
+$ ./ksm.py export -n '*hornet*' -g basic -f table
++-----+--------------------------------+-------+
+|  id |              name              |  size |
++-----+--------------------------------+-------+
+|  37 |           F7A Hornet           | small |
+|  11 |           F7C Hornet           | small |
+| 122 |      F7C Hornet Wildfire       | small |
+|  15 |       F7C-M Super Hornet       | small |
+| 177 | F7C-M Super Hornet Heartseeker | small |
+|  14 |      F7C-R Hornet Tracker      | small |
+|  13 |       F7C-S Hornet Ghost       | small |
++-----+--------------------------------+-------+
+```
+
+Display the same thing but in JSON format and with all fields:
+
+```
+$ ./ksm.py export -n '*hornet*' -g all -f json
+[
+  ... snip ...
+  {
+    "id": 13,
+    "name": "F7C-S Hornet Ghost",
+    "size": "small",
+    "manufacturer_name": "Anvil Aerospace",
+    "manufacturer_code": "ANVL",
+    "url": "https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-S-Hornet-Ghost",
+    "status": "Flight Ready",
+    "loaners": [],
+    "mass": 73724,
+    "beam": 21.5,
+    "height": 6.5,
+    "length": 22.5,
+    "scm_speed": 192,
+    "max_speed": 1229,
+    "cargo": 0,
+    "max_crew": 1,
+    "min_crew": 1,
+    "buy_auec": 1654100,
+    "buy_usd": 125,
+    "rent_auec": null,
+    "ins_std_claim_time": "00:06:45",
+    "ins_exp_claim_time": "00:02:15",
+    "ins_exp_cost": 3375,
+    "has_quantum_drive": false,
+    "has_gravlev": false
+  }
+  ... snip ...
+]
+```
+
+Updating Data
+-------------
+
+KSM knows how to download the latest information for its data sources. You
+can use the `update` subcommand to do it. Updated sources will modify data
+files so don't forget to commit those.
+
+Update all sources:
+
+```
+$ ./ksm.py update all  
+```
+
+Update SPAT only:
+
+```
+$ ./ksm.py update spat
+```
+
+Other Commands
+--------------
+
+The `dump` subcommand can be used to display raw data from all data sources
+before it's merged into one. This is a good way to find the source of erroneous
+values.
+
+The `validate` subcommand runs some simple validate checks on the exported data.
+It's a good idea to run the validator after running the update subcommand.
+
+Just want the data?
+-------------------
+
+This repository includes full ship data dumps in all supported formats. Look for
+the `ships.csv`, `ships.json`, and `ships.txt` files in the `dist` directory.
+
+KSM has also been imported to Google Sheets here:
+https://docs.google.com/spreadsheets/d/1CyizYbgT6JlR1ggATBemxM8prWAR05YYImSJI7gyA8w/edit?usp=sharing
