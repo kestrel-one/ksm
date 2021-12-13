@@ -27,13 +27,6 @@ $ ./ksm.py dump all -n '*hornet*' -f table
 +------------+-----+--------------------------------+-------+--------------+---------+------+--------+--------+
 |   source   |  id |              name              |  size |    status    |   mass  | beam | height | length |
 +------------+-----+--------------------------------+-------+--------------+---------+------+--------+--------+
-| hardpoint  |  37 |           F7A Hornet           | small |              | 73317.0 |      |        |        |
-| hardpoint  |  11 |           F7C Hornet           | small |              | 74132.0 |      |        |        |
-| hardpoint  | 122 |      F7C Hornet Wildfire       | small |              | 74132.0 |      |        |        |
-| hardpoint  |  15 |       F7C-M Super Hornet       | small |              | 78886.0 |      |        |        |
-| hardpoint  | 177 | F7C-M Super Hornet Heartseeker | small |              | 78886.0 |      |        |        |
-| hardpoint  |  14 |      F7C-R Hornet Tracker      | small |              | 74197.0 |      |        |        |
-| hardpoint  |  13 |       F7C-S Hornet Ghost       | small |              | 73724.0 |      |        |        |
 |    rsi     |  37 |           F7A Hornet           | small |  In Concept  | 73317.0 | 22.0 |  7.0   |  22.5  |
 |    rsi     |  11 |           F7C Hornet           | small | Flight Ready | 73535.0 | 21.5 |  6.5   |  22.5  |
 |    rsi     | 122 |      F7C Hornet Wildfire       | small | Flight Ready | 73535.0 | 21.5 |  6.5   |  22.5  |
