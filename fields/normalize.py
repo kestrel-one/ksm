@@ -14,6 +14,11 @@ def inherit_field(index, ships, source, field):
         ships[i][field] = value
 
 
+def set_bool_field(ships, field):
+    for i, ship in enumerate(ships):
+        ships[i][field] = ship.get(field) or False
+
+
 class Index:
     ships_by_source = defaultdict(list)
 

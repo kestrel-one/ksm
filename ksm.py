@@ -4,9 +4,9 @@ import click
 import re
 import sys
 
-from fields.normalize import Index, inherit_field
+from fields.export import merge_fields, validate_fields, ALL_FIELDS, FIELD_GROUPS
+from fields.normalize import Index, inherit_field, set_bool_field
 from utils.cli import render_csv, render_json, render_table
-from utils.fields import merge_fields, validate_fields, ALL_FIELDS, FIELD_GROUPS
 from utils.sources import all_sources, resolve_sources, source_choices
 
 DEFAULT_SORT = ('source.asc', 'name.asc')
@@ -85,6 +85,8 @@ def export_all(sort_keys=DEFAULT_SORT):
         ships.extend([s for s in module.export()])
     index = Index(ships)
     inherit_field(index, ships, 'rsi', 'id')
+    set_bool_field(ships, 'has_gravlev')
+    set_bool_field(ships, 'has_quantum_drive')
     ships.sort(key=lambda k: create_sort_key(k, sort_keys))
     return ships
 
