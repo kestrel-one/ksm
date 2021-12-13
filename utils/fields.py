@@ -54,6 +54,10 @@ def merge_fields(ships):
     return merged
 
 
+def validate_fields(ships):
+    return ['oopss']
+
+
 def clean_value(value):
     if type(value) == float and value.is_integer():
         return int(value)
