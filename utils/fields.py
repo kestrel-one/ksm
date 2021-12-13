@@ -45,10 +45,16 @@ def merge_fields(ships):
             found = False
             for source in FIELD_SOURCES.get(field, FIELD_SOURCES['__default__']):
                 if source in sources and field in sources[source]:
-                    ship[field] = sources[source][field]
+                    ship[field] = clean_value(sources[source][field])
                     found = True
                     break
             if not found:
                 ship[field] = None
         merged.append(ship)
     return merged
+
+
+def clean_value(value):
+    if type(value) == float and value.is_integer():
+        return int(value)
+    return value
