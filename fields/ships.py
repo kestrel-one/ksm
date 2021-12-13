@@ -88,7 +88,7 @@ def ship_size(size, name):
     size = size.strip().lower().capitalize()
     if size not in SHIP_SIZES:
         raise ValueError('Unknown ship size "%s"' % size)
-    return size.lower()
+    return size.capitalize()
 
 
 def ship_status(status):
