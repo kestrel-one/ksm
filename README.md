@@ -53,7 +53,3 @@ $ ./ksm.py dump all -n '*hornet*' -f table
 |    uex     |  13 |       F7C-S Hornet Ghost       |       |              |         |      |        |        |
 +------------+-----+--------------------------------+-------+--------------+---------+------+--------+--------+
 ```
-
-TODO:
-
-- Data validation and repair tooling
