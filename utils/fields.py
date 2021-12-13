@@ -7,7 +7,7 @@ FIELD_GROUPS = {
     'store': ('url', 'status', 'loaners'),
     'dimensions': ('mass', 'beam', 'height', 'length'),
     'flight': ('scm_speed', 'max_speed'),
-    'cargo': ('crew', 'max_crew', 'min_crew'),
+    'cargo': ('cargo', 'max_crew', 'min_crew'),
     'prices': ('buy_auec', 'buy_usd', 'rent_auec'),
     'insurance': ('ins_std_claim_time', 'ins_exp_claim_time', 'ins_exp_cost'),
     'capabilities': ('has_quantum_drive', 'has_gravlev'),
@@ -33,9 +33,7 @@ FIELD_SOURCES = {
 
 
 def merge_fields(ships):
-    index = defaultdict(dict)
-    for ship in ships:
-        index[ship['id']][ship['source']] = ship
+    index = create_index(ships)
     merged = []
     for ship_id, sources in index.items():
         ship = {}
@@ -55,7 +53,37 @@ def merge_fields(ships):
 
 
 def validate_fields(ships):
-    return ['oopss']
+    index = create_index(ships)
+    problems = []
+
+    # find missing required fields
+    required_fields = ('id', 'name', 'source')
+    for ship in ships:
+        for field in required_fields:
+            if field not in ship:
+                problems.append('Missing ID in record: ' + repr(ship))
+
+    # every field must have at least one value
+    # every field must be the same-ish type
+    for field in ALL_FIELDS:
+        values = []
+        for ship_id, sources in index.items():
+            for source, ship in sources.items():
+                values.append(ship.get(field))
+        if all([not value for value in values]):
+            problems.append('Field "%s" is always falsey' % field)
+        typed = [type(value) for value in values if value is not None]
+        if len(set(typed)) != 1:
+            problems.append('Field "%s" is not all the same type: %s' % (field, typed))
+
+    return problems
+
+
+def create_index(ships):
+    index = defaultdict(dict)
+    for ship in ships:
+        index[ship['id']][ship['source']] = ship
+    return index
 
 
 def clean_value(value):
