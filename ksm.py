@@ -62,7 +62,7 @@ def dump(sources, names, cols, fmt, colgroups, sort):
 def export(names, cols, fmt, colgroups, sort):
     ships = [ship for ship in export_all(sort) if match_name(ship, names)]
     ships = merge_fields(ships)
-    cols = resolve_cols(cols, colgroups, 'all')
+    cols = resolve_cols(cols, colgroups, 'all', no_source=True)
     exports = [filter_cols(ship, cols) for ship in ships]
     print(RENDERERS[fmt](exports, cols))
 
@@ -73,10 +73,12 @@ def validate():
         print(problem)
 
 
-def resolve_cols(cols, groups, default_group):
+def resolve_cols(cols, groups, default_group, no_source=False):
     cols = tuple(col for group in groups for col in FIELD_GROUPS[group]) + cols
     if len(cols) == 0:
         cols += FIELD_GROUPS[default_group]
+    if no_source:
+        cols = [col for col in cols if col != 'source']
     return cols
 
 
