@@ -20,7 +20,7 @@ RENDERERS = {
 
 @ click.group()
 @ click.pass_context
-@click.version_option('2.1.0')
+@click.version_option('2.1.1')
 def cli(ctx):
     ctx.max_content_width = 120
     ctx.help_option_names = ['-h', '--help']
