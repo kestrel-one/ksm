@@ -67,7 +67,6 @@ def validate_fields(ships):
 
     # every field must have at least one value
     # every field must be the same-ish type
-    # bool columns should be all bools
     for field in ALL_FIELDS:
         values = []
         for ship_id, sources in index.items():
@@ -78,9 +77,6 @@ def validate_fields(ships):
         typed_no_none = set([type(v) for v in values if v is not None])
         if len(typed_no_none) != 1:
             problems.append('Field "%s" is not all the same type: %s' % (field, values))
-        typed = set([type(v) for v in values])
-        if bool in typed and len(typed) != 1:
-            problems.append('Field "%s" has bools but isnt all bools: %s' % (field, values))
 
     return problems
 
