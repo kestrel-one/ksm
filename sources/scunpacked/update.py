@@ -8,8 +8,7 @@ import tarfile
 from utils.cli import progress
 
 THIS_DIR = pathlib.Path(__file__).parent
-# DATA_URL = 'https://github.com/richardthombs/scunpacked/tarball/master'
-DATA_URL = 'https://github.com/kestrel-one/scunpacked/tarball/3_15_1'
+DATA_URL = 'https://github.com/richardthombs/scunpacked/tarball/master'
 DATA_PATH = THIS_DIR / 'data.json'
 
 ARCHIVE_SIZE = int(12.0 * 1024 ** 2)  # no content-length header, so we guess
