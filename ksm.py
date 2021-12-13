@@ -48,12 +48,12 @@ def update(sources):
 @ click.option('-g', '--colgroups', multiple=True, type=click.Choice(COL_GROUP_MAP.keys()))
 @ click.option('-s', '--sort', default=('source.asc', 'name.asc'), multiple=True, type=str, help='[column].[asc|desc] (eg: source.desc)')
 def dump(sources, names, cols, fmt, colgroups, sort):
-    matched_sources = resolve_sources(sources)
+    resolved_sources = resolve_sources(sources)
     ships = [
         ship for ship in export_all(sort)
-        if match_name(ship, names) and match_source(ship, matched_sources)]
-    group_cols = [col for group in colgroups for col in COL_GROUP_MAP[group]]
-    cols = tuple(group_cols) + cols
+        if match_name(ship, names)
+        and match_source(ship, resolved_sources)]
+    cols = tuple(c for g in colgroups for c in COL_GROUP_MAP[g]) + cols
     if len(cols) == 0:
         cols += COL_GROUP_MAP['default']
     exports = [filter_cols(ship, cols) for ship in ships]
