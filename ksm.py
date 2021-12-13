@@ -6,23 +6,8 @@ import sys
 
 from fields.normalize import Index, inherit_field
 from utils.cli import render_csv, render_json, render_table
+from utils.fields import ALL_FIELDS, FIELD_GROUPS
 from utils.sources import all_sources, resolve_sources, source_choices
-
-COL_GROUP_MAP = {
-    'default': ('source', 'id', 'name', 'size', 'status', 'mass', 'beam', 'height', 'length'),
-    'meta': ('source',),
-    'basic': ('name', 'size'),
-    'manufacturer': ('manufacturer_name', 'manufacturer_code'),
-    'store': ('id', 'url', 'status', 'loaners'),
-    'dimensions': ('mass', 'beam', 'height', 'length'),
-    'flight': ('max_scm', 'max_speed'),
-    'cargo': ('crew', 'max_crew', 'min_crew'),
-    'prices': ('buy_auec', 'buy_usd', 'rent_auec'),
-    'insurance': ('ins_std_claim_time', 'ins_exp_claim_time', 'ins_exp_cost'),
-    'capabilities': ('has_quantum_drive', 'has_gravlev'),
-}
-ALL_COLS = tuple(col for group in COL_GROUP_MAP for col in COL_GROUP_MAP[group])
-COL_GROUP_MAP['all'] = ALL_COLS
 
 RENDERERS = {
     'csv': render_csv,
@@ -50,9 +35,9 @@ def update(sources):
 @ cli.command()
 @ click.argument('sources', required=True, nargs=-1, type=source_choices)
 @ click.option('-n', '--names', multiple=True, type=str)
-@ click.option('-c', '--cols', multiple=True, type=click.Choice(ALL_COLS))
+@ click.option('-c', '--cols', multiple=True, type=click.Choice(ALL_FIELDS))
 @ click.option('-f', '--fmt', default='json', type=click.Choice(RENDERERS.keys()))
-@ click.option('-g', '--colgroups', multiple=True, type=click.Choice(COL_GROUP_MAP.keys()))
+@ click.option('-g', '--colgroups', multiple=True, type=click.Choice(FIELD_GROUPS.keys()))
 @ click.option('-s', '--sort', default=('source.asc', 'name.asc'), multiple=True, type=str, help='[column].[asc|desc] (eg: source.desc)')
 def dump(sources, names, cols, fmt, colgroups, sort):
     resolved_sources = resolve_sources(sources)
@@ -60,9 +45,12 @@ def dump(sources, names, cols, fmt, colgroups, sort):
         ship for ship in export_all(sort)
         if match_name(ship, names)
         and match_source(ship, resolved_sources)]
-    cols = tuple(c for g in colgroups for c in COL_GROUP_MAP[g]) + cols
+    cols = tuple(
+        col for group in colgroups
+        for col in FIELD_GROUPS[group]
+    ) + cols
     if len(cols) == 0:
-        cols += COL_GROUP_MAP['default']
+        cols += FIELD_GROUPS['default']
     exports = [filter_cols(ship, cols) for ship in ships]
     print(RENDERERS[fmt](exports, cols))
 
