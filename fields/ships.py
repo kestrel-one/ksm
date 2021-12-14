@@ -33,6 +33,7 @@ SHIP_RENAME_MAP = {
 }
 
 SHIP_SKIP_MAP = (
+    'Avenger Titan Renegade',
     'Ballista Dunestalker',
     'Ballista Snowblind',
     'Carrack Expedition w/C8X',
@@ -40,6 +41,8 @@ SHIP_SKIP_MAP = (
     'Carrack w/C8X',
     'Constellation Phoenix Emerald',
     'Dragonfly Yellowjacket',
+    'F7C Hornet Wildfire',
+    'F7C-M Super Hornet Heartseeker',
     'F8 Lightning',
     'Gladius Pirate',
     'Mustang Alpha Vindicator',
