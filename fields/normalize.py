@@ -14,6 +14,26 @@ def inherit_field(index, ships, source, field):
         ships[i][field] = value
 
 
+def copy_field_ship_to_ship(ships, field, from_ship, to_ship):
+    best_value = None
+    best_source = None
+    for ship in ships:
+        if ship['name'] != from_ship:
+            continue
+        value = ship.get(field)
+        if value is not None:
+            best_value = value
+            best_source = ship['source']
+    if best_value is None or best_source is None:
+        return
+    for ship in ships:
+        if ship['name'] != to_ship:
+            continue
+        if ship['source'] != best_source:
+            continue
+        ship[field] = best_value
+
+
 def set_bool_field(ships, field):
     for i, ship in enumerate(ships):
         if field in ship:
