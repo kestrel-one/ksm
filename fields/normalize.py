@@ -34,6 +34,14 @@ def copy_field_ship_to_ship(ships, field, from_ship, to_ship):
         ship[field] = best_value
 
 
+def clear_field_if_falsey(ships, field):
+    for ship in ships:
+        if field not in ship:
+            continue
+        if not ship[field]:
+            ship[field] = None
+
+
 def insert_field(ships, field, source, ship_name, value):
     for ship in ships:
         if ship['source'] != source:

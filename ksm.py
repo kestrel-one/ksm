@@ -5,7 +5,14 @@ import re
 import sys
 
 from fields.export import merge_fields, sort_value, validate_fields, ALL_FIELDS, FIELD_GROUPS
-from fields.normalize import Index, copy_field_ship_to_ship, inherit_field, insert_field, set_bool_field
+from fields.normalize import (
+    Index,
+    clear_field_if_falsey,
+    copy_field_ship_to_ship,
+    inherit_field,
+    insert_field,
+    set_bool_field,
+)
 from utils.cli import render_csv, render_json, render_table
 from utils.sources import all_sources, resolve_sources, source_choices
 
@@ -104,6 +111,9 @@ def export_all():
 
     set_bool_field(ships, 'has_gravlev')
     set_bool_field(ships, 'has_quantum_drive')
+
+    clear_field_if_falsey(ships, 'buy_usd')
+    clear_field_if_falsey(ships, 'buy_auec')
     return ships
 
 
