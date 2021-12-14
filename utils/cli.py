@@ -9,7 +9,7 @@ def progress(label, length):
     return click.progressbar(
         length=length,
         width=10,
-        label='% 12s' % label,
+        label='% 16s' % label,
     )
 
 

@@ -24,7 +24,7 @@ def update():
 
 
 def fetch():
-    with progress('Fetching', ARCHIVE_SIZE) as bar:
+    with progress('Downloading', ARCHIVE_SIZE) as bar:
         res = requests.get(DATA_URL, stream=True)
         with open(ARCHIVE_PATH, 'wb') as f:
             for data in res.iter_content(10 * 1024):

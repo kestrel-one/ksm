@@ -9,7 +9,8 @@ from utils.cli import progress
 
 THIS_DIR = pathlib.Path(__file__).parent
 DATA_URL = 'https://github.com/richardthombs/scunpacked/tarball/master'
-DATA_PATH = THIS_DIR / 'data.json'
+SHIPS_DATA_PATH = THIS_DIR / 'ships.json'
+SHOPS_DATA_PATH = THIS_DIR / 'shops.json'
 
 ARCHIVE_SIZE = int(12.0 * 1024 ** 2)  # no content-length header, so we guess
 ARCHIVE_PATH = THIS_DIR / 'data.tar.gz'
@@ -24,7 +25,7 @@ def update():
 
 
 def fetch():
-    with progress('Fetching', ARCHIVE_SIZE) as bar:
+    with progress('Downloading', ARCHIVE_SIZE) as bar:
         res = requests.get(DATA_URL, stream=True)
         with open(ARCHIVE_PATH, 'wb') as f:
             for data in res.iter_content(10 * 1024):
@@ -35,30 +36,37 @@ def fetch():
 
 def unpack():
     with tarfile.open(ARCHIVE_PATH, 'r:gz') as tar:
-        data = __build_data(tar)
-        with progress('Unpacking', len(data)) as bar:
-            for name, files in data.items():
+        ships, other = find_file_refs(tar)
+        with progress('Unpacking ships', len(ships)) as bar:
+            for name, files in ships.items():
                 for key, filepath in files.items():
-                    data[name][key] = json.load(tar.extractfile(filepath))
+                    ships[name][key] = json.load(tar.extractfile(filepath))
                 bar.update(1)
-            with open(DATA_PATH, 'w') as f:
-                json.dump(data, f)
+            with open(SHIPS_DATA_PATH, 'w') as f:
+                json.dump(ships, f)
+        with progress('Unpacking shops', 1) as bar:
+            shops = json.load(tar.extractfile(other['shops']))
+            with open(SHOPS_DATA_PATH, 'w') as f:
+                json.dump(shops, f)
+            bar.update(1)
 
 
-def __build_data(tar):
-    data = {}
+def find_file_refs(tar):
+    ships = {}
+    other = {}
     for info in tar:
-        if 'api/dist/json/v2/ships/' not in info.name:
-            continue
-        match = RE_SHIP_FILE.match(info.name)
-        if not match:
-            continue
-        name = match[1]
-        sect = match[2] or 'ship'
-        if name not in data:
-            data[name] = {}
-        data[name][sect] = info.name
-    return data
+        if 'api/dist/json/v2/ships/' in info.name:
+            match = RE_SHIP_FILE.match(info.name)
+            if not match:
+                continue
+            name = match[1]
+            category = match[2] or 'ship'
+            if name not in ships:
+                ships[name] = {}
+            ships[name][category] = info.name
+        if info.name.endswith('api/dist/json/shops.json'):
+            other['shops'] = info.name
+    return ships, other
 
 
 def cleanup():

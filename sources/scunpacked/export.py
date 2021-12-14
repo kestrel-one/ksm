@@ -1,6 +1,8 @@
 import json
 import pathlib
 
+from collections import defaultdict
+
 from fields.ships import (
     ship_manu_code,
     ship_manu_name,
@@ -13,25 +15,45 @@ from fields.types import (
     minutes,
 )
 
-DATA_PATH = pathlib.Path(__file__).parent / 'data.json'
+SHIPS_DATA_PATH = pathlib.Path(__file__).parent / 'ships.json'
+SHOPS_DATA_PATH = pathlib.Path(__file__).parent / 'shops.json'
 
 
 def export():
-    items = []
-    with open(DATA_PATH, 'r') as f:
-        items = json.load(f)
     ships = []
-    for _, item in items.items():
-        if '_BIS' in item['ship']['ClassName']:
+    with open(SHIPS_DATA_PATH, 'r') as f:
+        ships = json.load(f)
+    shops = []
+    with open(SHOPS_DATA_PATH, 'r') as f:
+        shops = json.load(f)
+
+    ship_prices = defaultdict(list)
+    for shop in shops:
+        for inventory in shop['inventory']:
+            if inventory.get('type') != 'NOITEM_Vehicle':
+                continue
+            if not inventory['shopSellsThis']:
+                continue
+            ship_prices[inventory['displayName']].append(inventory['basePrice'])
+    for ship, prices in ship_prices.items():
+        if prices.count(prices[0]) != len(prices):
+            raise ValueError('Uh oh! Base prices dont match for ship: %s' % ship)
+        ship_prices[ship] = prices[0]
+
+    exported_ships = []
+    for _, item in ships.items():
+        base_name = item['ship']['Name']
+        class_name = item['ship']['ClassName']
+        if '_BIS' in class_name:
             continue
-        if item['ship']['ClassName'].endswith('_Modifiers'):
+        if class_name.endswith('_Modifiers'):
             # Not sure what this is but it was creating duplicate ships
             continue
-        name = ship_name(item['ship']['Name'])
+        name = ship_name(base_name)
         if name is None:
             continue
         fix_vehicle_size(item)
-        ships.append({
+        exported_ship = {
             'source': 'scunpacked',
             'name': name,
             'size': ship_size(item['ship']['Size'], name),
@@ -48,8 +70,11 @@ def export():
             'ins_std_claim_time': minutes(item['ship'].get('Insurance', {}).get('StandardClaimTime'), True),
             'ins_exp_claim_time': minutes(item['ship'].get('Insurance', {}).get('ExpeditedClaimTime'), True),
             'ins_exp_cost': integer(item['ship'].get('Insurance', {}).get('ExpeditedCost'), True),
-        })
-    return ships
+        }
+        if base_name in ship_prices:
+            exported_ship['buy_auec'] = int(ship_prices.get(base_name))
+        exported_ships.append(exported_ship)
+    return exported_ships
 
 
 def fix_vehicle_size(item):
@@ -62,3 +87,4 @@ if __name__ == '__main__':
 
 # Command for digging into exported JSON:
 # cat sources/scunpacked/data.json | jq '[ .[] | select(.ship.Name|contains("C2")) ][] | {ship}[] | {Name,ClassName,Role,Size,Cargo,Crew,Mass,IsSpaceship}'
+# cat sources/scunpacked/shops.json | jq '.[] | .inventory[] | select(.displayName != null) | select(.displayName|contains("Avenger Stalker"))'

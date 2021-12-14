@@ -31,6 +31,7 @@ FIELD_SOURCES = {
     'status': ('rsi',),
     'min_crew': ('spat', 'scunpacked', 'rsi', 'uex'),
     'max_crew': ('spat', 'scunpacked', 'rsi', 'uex'),
+    'buy_auec': ('scunpacked', 'uex'),
 }
 
 STATUS_LEVELS = {

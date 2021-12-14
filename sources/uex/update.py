@@ -14,7 +14,7 @@ def update():
     if not api_key:
         click.echo('  Skipping. UEX_API_KEY is not set. See: https://uexcorp.space/api.html')
         return
-    with progress('Fetching', 2) as bar:
+    with progress('Downloading', 2) as bar:
         content = requests.get(DATA_URL, headers={'api_key': api_key}).content
         bar.update(1)
         with open(DATA_PATH, 'wb') as f:

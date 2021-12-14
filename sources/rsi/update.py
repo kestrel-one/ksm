@@ -9,7 +9,7 @@ DATA_PATH = pathlib.Path(__file__).parent / 'data.json'
 
 def update():
     content = None
-    with progress('Fetching', 1) as bar:
+    with progress('Downloading', 1) as bar:
         content = requests.get(DATA_URL).content
         bar.update(1)
     with open(DATA_PATH, 'wb') as f:

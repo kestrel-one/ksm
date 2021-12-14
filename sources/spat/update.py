@@ -9,7 +9,7 @@ DATA_SIZE = 6 * 1024  # no content-length header, so we guess
 
 
 def update():
-    with progress('Fetching', 2) as bar:
+    with progress('Downloading', 2) as bar:
         content = requests.get(DATA_URL).content
         bar.update(1)
         with open(DATA_PATH, 'wb') as f:
