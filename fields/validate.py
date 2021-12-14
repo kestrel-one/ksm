@@ -48,4 +48,14 @@ def validate_fields(ships, merged_ships):
             continue
         problems.append('Flight ready ships is not buyable in game: %s' % ship['name'])
 
+    # min/max crew should either both be defined or none
+    # max should always be greater than min
+    for ship in merged_ships:
+        minc = ship['min_crew']
+        maxc = ship['max_crew']
+        if not minc and maxc or minc and not maxc:
+            problems.append('Crew mismatch(%s-%s) for ship %s' % (minc, maxc, ship['name']))
+        elif maxc is not None and minc is not None and minc > maxc:
+            problems.append('Crew min > max for ship %s (%d-%d)' % (ship['name'], minc, maxc))
+
     return problems

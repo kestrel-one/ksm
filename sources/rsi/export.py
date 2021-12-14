@@ -33,6 +33,8 @@ def item_to_ship(item):
     name = ship_name(item['name'])
     if name is None:
         return None
+    maxc = integer(item['max_crew'], True)
+    minc = integer(item['min_crew'], True) or maxc
     return {
         'source': 'rsi',
         'id': integer(item['id']),
@@ -47,8 +49,8 @@ def item_to_ship(item):
         'length': decimal(item['length'], True),
         'beam': decimal(item['beam'], True),
         'cargo': integer(item['cargocapacity'], True),
-        'min_crew': integer(item['min_crew'], True),
-        'max_crew': integer(item['max_crew'], True),
+        'min_crew': minc,
+        'max_crew': maxc,
         'max_speed': decimal(item['afterburner_speed'], True),
         'scm_speed': decimal(item['scm_speed'], True),
         'has_quantum_drive': has_quantum_drive(item),
