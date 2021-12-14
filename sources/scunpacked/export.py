@@ -22,6 +22,8 @@ def export():
         items = json.load(f)
     ships = []
     for _, item in items.items():
+        if '_BIS' in item['ship']['ClassName']:
+            continue
         name = ship_name(item['ship']['Name'])
         if name is None:
             continue
@@ -54,3 +56,6 @@ def fix_vehicle_size(item):
 
 if __name__ == '__main__':
     export()
+
+# Command for digging into exported JSON:
+# cat sources/scunpacked/data.json | jq '[ .[] | select(.ship.Name|contains("C2")) ][] | {ship}[] | {Name,ClassName,Role,Size,Cargo,Crew,Mass,IsSpaceship}'
