@@ -84,6 +84,11 @@ def validate_fields(ships, merged_ships):
         if len(typed_no_none) != 1:
             problems.append('Field "%s" is not all the same type: %s' % (field, values))
 
+    # there should be no vehicles with a QD
+    for ship in merged_ships:
+        if ship['size'] == 'Vehicle' and ship['has_quantum_drive']:
+            problems.append('Ship "%s" is a vehicle with a quantum drive' % ship['name'])
+
     return problems
 
 
