@@ -42,6 +42,7 @@ SHIP_SKIP_MAP = (
     'P-72 Archimedes Emerald',
     'PTV',
     'Ursa Rover Fortuna',
+    'Gladius Pirate',
 )
 
 SHIP_SIZE_MAP = {
