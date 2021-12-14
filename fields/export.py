@@ -89,6 +89,14 @@ def validate_fields(ships, merged_ships):
         if ship['size'] == 'Vehicle' and ship['has_quantum_drive']:
             problems.append('Ship "%s" is a vehicle with a quantum drive' % ship['name'])
 
+    # all flight ready ships should have insurance info
+    for ship in merged_ships:
+        for field in FIELD_GROUPS['insurance']:
+            if ship['status'] != 'Flight Ready':
+                continue
+            if not ship.get(field):
+                problems.append('Flight ready ship "%s" missing insurance info: %s' % (ship['name'], field))
+
     return problems
 
 
