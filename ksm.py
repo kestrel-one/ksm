@@ -4,7 +4,7 @@ import click
 import re
 import sys
 
-from fields.export import merge_fields, sort_value, validate_fields, ALL_FIELDS, FIELD_GROUPS
+from fields.export import merge_fields, sort_value, ALL_FIELDS, FIELD_GROUPS
 from fields.normalize import (
     Index,
     clear_field_if_falsey,
@@ -13,6 +13,7 @@ from fields.normalize import (
     insert_field,
     set_bool_field,
 )
+from fields.validate import validate_fields
 from utils.cli import render_csv, render_json, render_table
 from utils.sources import all_sources, resolve_sources, source_choices
 
