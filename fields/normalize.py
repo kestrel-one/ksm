@@ -34,6 +34,15 @@ def copy_field_ship_to_ship(ships, field, from_ship, to_ship):
         ship[field] = best_value
 
 
+def insert_field(ships, field, source, ship_name, value):
+    for ship in ships:
+        if ship['source'] != source:
+            continue
+        if ship['name'] != ship_name:
+            continue
+        ship[field] = value
+
+
 def set_bool_field(ships, field):
     for i, ship in enumerate(ships):
         if field in ship:
