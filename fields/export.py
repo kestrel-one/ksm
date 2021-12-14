@@ -33,6 +33,12 @@ FIELD_SOURCES = {
     'max_crew': ('spat', 'scunpacked', 'rsi', 'uex'),
 }
 
+STATUS_LEVELS = {
+    'Flight Ready': 3,
+    'In Production': 2,
+    'In Concept': 1,
+}
+
 
 def merge_fields(ships):
     index = create_index(ships)
@@ -86,6 +92,12 @@ def create_index(ships):
     for ship in ships:
         index[ship['id']][ship['source']] = ship
     return index
+
+
+def sort_value(ship, key):
+    if key == 'status':
+        return STATUS_LEVELS[ship['status']]
+    return ship[key]
 
 
 def clean_value(value):

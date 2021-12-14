@@ -4,7 +4,7 @@ import click
 import re
 import sys
 
-from fields.export import merge_fields, validate_fields, ALL_FIELDS, FIELD_GROUPS
+from fields.export import merge_fields, sort_value, validate_fields, ALL_FIELDS, FIELD_GROUPS
 from fields.normalize import Index, inherit_field, set_bool_field
 from utils.cli import render_csv, render_json, render_table
 from utils.sources import all_sources, resolve_sources, source_choices
@@ -65,6 +65,7 @@ def export(names, cols, fmt, colgroups, sort):
     ships = [ship for ship in export_all() if match_name(ship, names)]
     ships = merge_fields(ships)
     cols = resolve_cols(cols, colgroups, 'all', no_source=True)
+    sort_ships(ships, sort)
     exports = [filter_cols(ship, cols) for ship in ships]
     print(RENDERERS[fmt](exports, cols))
 
@@ -139,7 +140,7 @@ def create_sort_key(ship, sort_keys):
     resolved_keys = []
     for key in sort_keys:
         key_name, order = (key if '.' in key else key + '.asc').split('.')
-        resolved_keys.append(str_sort_key(ship[key_name], order))
+        resolved_keys.append(str_sort_key(sort_value(ship, key_name), order))
     return resolved_keys
 
 
