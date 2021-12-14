@@ -5,7 +5,7 @@ import re
 import sys
 
 from fields.export import merge_fields, sort_value, validate_fields, ALL_FIELDS, FIELD_GROUPS
-from fields.normalize import Index, copy_field_ship_to_ship, inherit_field, set_bool_field
+from fields.normalize import Index, copy_field_ship_to_ship, inherit_field, insert_field, set_bool_field
 from utils.cli import render_csv, render_json, render_table
 from utils.sources import all_sources, resolve_sources, source_choices
 
@@ -93,9 +93,15 @@ def export_all():
         ships.extend([s for s in module.export()])
     index = Index(ships)
     inherit_field(index, ships, 'rsi', 'id')
+
     copy_field_ship_to_ship(ships, 'ins_std_claim_time', '600i Touring', '600i Explorer')
     copy_field_ship_to_ship(ships, 'ins_exp_claim_time', '600i Touring', '600i Explorer')
     copy_field_ship_to_ship(ships, 'ins_exp_cost', '600i Touring', '600i Explorer')
+
+    insert_field(ships, 'ins_std_claim_time', 'scunpacked', 'MOLE', '00:16:12')
+    insert_field(ships, 'ins_exp_claim_time', 'scunpacked', 'MOLE', '00:02:42')
+    insert_field(ships, 'ins_exp_cost', 'scunpacked', 'MOLE', 4050)
+
     set_bool_field(ships, 'has_gravlev')
     set_bool_field(ships, 'has_quantum_drive')
     return ships
