@@ -24,6 +24,9 @@ def export():
     for _, item in items.items():
         if '_BIS' in item['ship']['ClassName']:
             continue
+        if item['ship']['ClassName'].endswith('_Modifiers'):
+            # Not sure what this is but it was creating duplicate ships
+            continue
         name = ship_name(item['ship']['Name'])
         if name is None:
             continue
