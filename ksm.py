@@ -72,7 +72,9 @@ def export(names, cols, fmt, colgroups, sort):
 
 @cli.command()
 def validate():
-    for problem in validate_fields(export_all()):
+    ships = export_all()
+    merged_ships = merge_fields(ships)
+    for problem in validate_fields(ships, merged_ships):
         print(problem)
 
 

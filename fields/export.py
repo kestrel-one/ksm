@@ -60,7 +60,7 @@ def merge_fields(ships):
     return merged
 
 
-def validate_fields(ships):
+def validate_fields(ships, merged_ships):
     index = create_index(ships)
     problems = []
 
