@@ -32,7 +32,7 @@ SHIP_RENAME_MAP = {
     'Enveador': 'Endeavor',
 }
 
-SHIP_SKIP_MAP = (
+SHIP_SKIPPABLE = (
     'Avenger Titan Renegade',
     'Ballista Dunestalker',
     'Ballista Snowblind',
@@ -45,10 +45,29 @@ SHIP_SKIP_MAP = (
     'F7C-M Super Hornet Heartseeker',
     'F8 Lightning',
     'Gladius Pirate',
+    'Gladius Valiant',
     'Mustang Alpha Vindicator',
+    'Nox Kue',
     'P-72 Archimedes Emerald',
     'PTV',
+    'Sabre Comet',
     'Ursa Rover Fortuna',
+)
+
+SHIP_NOT_BUYABLE = (
+    '400i',
+    'A2 Hercules',
+    'Ares Inferno',
+    'Ares Ion',
+    'Cyclone MT',
+    'Glaive',
+    'Mustang Omega',
+    'P-72 Archimedes',
+    'RAFT',
+    'Redeemer',
+    'Sabre Raven',
+    'Scythe',
+    'Spartan',
 )
 
 SHIP_SIZE_MAP = {
@@ -64,7 +83,7 @@ SHIP_SIZES = ('Snub', 'Small', 'Medium', 'Large', 'Capital', 'Vehicle')
 
 
 def is_skippable_ship_name(name):
-    return name.endswith(' Edition') or name in SHIP_SKIP_MAP
+    return name.endswith(' Edition') or name in SHIP_SKIPPABLE
 
 
 def ship_name(name):

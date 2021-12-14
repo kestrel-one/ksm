@@ -1,4 +1,5 @@
 from fields.export import create_index, ALL_FIELDS, FIELD_GROUPS
+from fields.ships import SHIP_NOT_BUYABLE
 
 
 def validate_fields(ships, merged_ships):
@@ -37,5 +38,14 @@ def validate_fields(ships, merged_ships):
                 continue
             if not ship.get(field):
                 problems.append('Flight ready ship "%s" missing insurance info: %s' % (ship['name'], field))
+
+    # all flight ready ships must be buyable in-game
+    # some ships need to be excluded from this check explicitly
+    for ship in merged_ships:
+        if ship['status'] != 'Flight Ready' or ship['buy_auec'] is not None:
+            continue
+        if ship['name'] in SHIP_NOT_BUYABLE:
+            continue
+        problems.append('Flight ready ships is not buyable in game: %s' % ship['name'])
 
     return problems
