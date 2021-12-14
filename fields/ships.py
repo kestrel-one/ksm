@@ -35,14 +35,17 @@ SHIP_RENAME_MAP = {
 SHIP_SKIP_MAP = (
     'Ballista Dunestalker',
     'Ballista Snowblind',
+    'Carrack Expedition w/C8X',
+    'Carrack Expedition',
+    'Carrack w/C8X',
     'Constellation Phoenix Emerald',
     'Dragonfly Yellowjacket',
     'F8 Lightning',
+    'Gladius Pirate',
     'Mustang Alpha Vindicator',
     'P-72 Archimedes Emerald',
     'PTV',
     'Ursa Rover Fortuna',
-    'Gladius Pirate',
 )
 
 SHIP_SIZE_MAP = {
