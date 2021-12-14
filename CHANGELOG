@@ -1,0 +1,46 @@
+2.1.4
+-----
+
+- Fixed missing aUEC buy prices (thanks reddit /user/quantainium_pasta/)
+- Added validator to ensure flyable ships always have aUEC prices
+- Removed more ships that are livery only versions
+
+2.1.3
+-----
+
+- Removed $0 buy prices since it doesn't make sense to display it that way
+- Added validator for flyable ships that are missing insurance times
+- Added validator for ground vehicles that have a QD (should be impossible)
+- Improved support for sorting fields
+- Fix for missing MOLE insurance data
+- Removed more ships that are livery only versions
+- Improved release tooling
+
+2.1.2
+-----
+
+- Removed bool validation. Doesn't make sense since some fields can be None.
+
+2.1.1
+-----
+
+- Capitalized ship sizes
+- Fixed source field being included with exports
+- README updates
+- No longer trusting UEX for min/max crew counts
+- Added --version flag
+
+2.1.0
+-----
+
+- Added field validation
+- Added export command
+- Remove hardpoint.io data source, doesn't look maintained
+- Added support for CSV format
+- Added support for sorting
+- Added column filtering
+
+2.0.0
+-----
+
+- Initial exploration
