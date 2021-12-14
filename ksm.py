@@ -10,6 +10,7 @@ from utils.cli import render_csv, render_json, render_table
 from utils.sources import all_sources, resolve_sources, source_choices
 
 DEFAULT_SORT = ('source.asc', 'name.asc')
+EXPORT_SORT = ('status.desc', 'manufacturer_code.asc', 'name.asc')
 
 RENDERERS = {
     'csv': render_csv,
@@ -45,10 +46,11 @@ def update(sources):
 def dump(sources, names, cols, fmt, colgroups, sort):
     resolved_sources = resolve_sources(sources)
     ships = [
-        ship for ship in export_all(sort)
+        ship for ship in export_all()
         if match_name(ship, names)
         and match_source(ship, resolved_sources)]
     cols = resolve_cols(cols, colgroups, 'all')
+    sort_ships(ships, sort)
     ships = [filter_cols(ship, cols) for ship in ships]
     print(RENDERERS[fmt](ships, cols))
 
@@ -58,9 +60,9 @@ def dump(sources, names, cols, fmt, colgroups, sort):
 @ click.option('-c', '--cols', multiple=True, type=click.Choice(ALL_FIELDS))
 @ click.option('-f', '--fmt', default='json', type=click.Choice(RENDERERS.keys()))
 @ click.option('-g', '--colgroups', multiple=True, type=click.Choice(FIELD_GROUPS.keys()))
-@ click.option('-s', '--sort', default=DEFAULT_SORT, multiple=True, type=str, help='[column].[asc|desc] (eg: source.desc)')
+@ click.option('-s', '--sort', default=EXPORT_SORT, multiple=True, type=str, help='[column].[asc|desc] (eg: source.desc)')
 def export(names, cols, fmt, colgroups, sort):
-    ships = [ship for ship in export_all(sort) if match_name(ship, names)]
+    ships = [ship for ship in export_all() if match_name(ship, names)]
     ships = merge_fields(ships)
     cols = resolve_cols(cols, colgroups, 'all', no_source=True)
     exports = [filter_cols(ship, cols) for ship in ships]
@@ -82,7 +84,7 @@ def resolve_cols(cols, groups, default_group, no_source=False):
     return cols
 
 
-def export_all(sort_keys=DEFAULT_SORT):
+def export_all():
     ships = []
     for module_name, module in all_sources:
         ships.extend([s for s in module.export()])
@@ -90,7 +92,6 @@ def export_all(sort_keys=DEFAULT_SORT):
     inherit_field(index, ships, 'rsi', 'id')
     set_bool_field(ships, 'has_gravlev')
     set_bool_field(ships, 'has_quantum_drive')
-    ships.sort(key=lambda k: create_sort_key(k, sort_keys))
     return ships
 
 
@@ -128,6 +129,10 @@ def match_str(needle, haystack):
         regex = re.compile('^' + needle.replace('*', '.*') + '$')
         return regex.match(haystack) is not None
     return needle == haystack
+
+
+def sort_ships(ships, sort_keys):
+    ships.sort(key=lambda k: create_sort_key(k, sort_keys))
 
 
 def create_sort_key(ship, sort_keys):
