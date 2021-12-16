@@ -24,6 +24,7 @@ SHIP_RENAME_MAP = {
     'Khartu-Al': 'Khartu-al',
     'Pirate Gladius': 'Gladius Pirate',
     'San tok.Yāi': "San'tok.yāi",
+    'SanTokYai': "San'tok.yāi",
     'Mole': 'MOLE',
     'MPUV-1C': 'MPUV Cargo',
     'MPUV-1P': 'MPUV Personnel',

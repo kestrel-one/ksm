@@ -10,7 +10,7 @@ from utils.cli import progress
 # XXX
 THIS_DIR = pathlib.Path(__file__).parent
 DATA_URL = ''
-DATA_PATH = pathlib.Path(__file__).parent / 'data.json'
+DATA_PATH = THIS_DIR / 'data.json'
 
 # XXX
 ARCHIVE_SIZE = 10 * 1024 ** 2  # no content-length header, so we guess

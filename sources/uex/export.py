@@ -30,10 +30,9 @@ def export():
         if name is None:
             continue
         min_crew, max_crew = ship_crew_range(item['crew'])
-        ships.append({
+        ship = {
             'source': 'uex',
             'name': name,
-            'buy_usd': integer(item['price']),
             'buy_auec': min_price(item['buy_at']),
             'rent_auec': min_price(item['rent_at']),
             'url': ship_url(item['store_url']),
@@ -41,7 +40,10 @@ def export():
             'cargo': integer(item['scu']),
             'min_crew': min_crew,
             'max_crew': max_crew,
-        })
+        }
+        if item['price']:
+            ship['buy_usd'] = integer(item['price'])
+        ships.append(ship)
         code_to_name[item['code']] = name
     for ship in ships:
         loaners = [code_to_name.get(code) for code in ship['loaners']]
