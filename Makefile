@@ -1,5 +1,5 @@
 ACTIVATE=. .virtualenv/bin/activate
-VERSION=2.1.5
+VERSION=2.1.6
 
 all:
 	@echo "make [environment|clean]"

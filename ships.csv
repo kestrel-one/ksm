@@ -9,7 +9,7 @@ id,name,size,manufacturer_name,manufacturer_code,url,status,loaners,mass,beam,he
 59,Redeemer,Large,Aegis Dynamics,AEGS,https://robertsspaceindustries.com/pledge/ships/redeemer/Redeemer,Flight Ready,['Valkyrie'],444270.26,23.5,14,51,140,960,0,4,3,,325,,00:17:33,00:05:51,8775,True,False
 72,Retaliator Bomber,Large,Aegis Dynamics,AEGS,https://robertsspaceindustries.com/pledge/ships/aegis-retaliator/Retaliator-Bomber,Flight Ready,[],343270.29,42.5,12.5,69.5,138,942,0,7,4,4031700,275,,00:31:52,00:10:38,15940,True,False
 98,Sabre,Small,Aegis Dynamics,AEGS,https://robertsspaceindustries.com/pledge/ships/sabre/Sabre,Flight Ready,[],86592.72,26,5,24,205,1234,0,1,1,2183300,170,,00:06:45,00:02:15,3375,True,False
-148,Sabre Raven,Small,Aegis Dynamics,AEGS,https://robertsspaceindustries.com/pledge/ships/sabre/Sabre-Raven,Flight Ready,[],70811.32,20.5,5,24,204,1234,0,1,1,,,,00:07:36,00:02:32,3800,True,False
+148,Sabre Raven,Small,Aegis Dynamics,AEGS,https://robertsspaceindustries.com/pledge/ships/sabre/Sabre-Raven,Flight Ready,[],70811.32,20.5,5,24,204,1234,0,1,1,,185,,00:07:36,00:02:32,3800,True,False
 95,Vanguard Harbinger,Medium,Aegis Dynamics,AEGS,https://robertsspaceindustries.com/pledge/ships/vanguard/Vanguard-Harbinger,Flight Ready,[],336604,40,8,38.5,171,1022,0,2,2,2050500,290,,00:10:58,00:03:39,5485,True,False
 127,Vanguard Hoplite,Medium,Aegis Dynamics,AEGS,https://robertsspaceindustries.com/pledge/ships/vanguard/Vanguard-Hoplite,Flight Ready,[],234870,40,8.5,38.5,171,1022,0,1,1,3104200,235,,00:09:17,00:03:06,4645,True,False
 96,Vanguard Sentinel,Medium,Aegis Dynamics,AEGS,https://robertsspaceindustries.com/pledge/ships/vanguard/Vanguard-Sentinel,Flight Ready,[],170685,40,8.5,38.5,170,1021,0,2,2,2012000,275,,00:10:58,00:03:39,5485,True,False
@@ -26,7 +26,7 @@ id,name,size,manufacturer_name,manufacturer_code,url,status,loaners,mass,beam,he
 64,Gladiator,Small,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/anvil-gladiator/Gladiator,Flight Ready,[],88408,22.5,6,22.5,150,982,0,2,1,1954500,165,,00:07:36,00:02:32,3800,True,False
 150,Hawk,Small,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/hawk/Hawk,Flight Ready,[],67066,22,6.5,17,224,1275,0,1,1,1284400,100,,00:04:43,00:01:34,2365,True,False
 128,Hurricane,Small,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/hurricane/Hurricane,Flight Ready,[],90245,14.5,6,22,197,1231,0,2,2,1218300,195,,00:07:36,00:02:32,3800,True,False
-225,Spartan,Vehicle,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/spartan/Spartan,Flight Ready,,100016,7,5.5,17,0,0,0,1,1,,,,00:00:45,00:00:00,350,False,False
+225,Spartan,Vehicle,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/spartan/Spartan,Flight Ready,,100016,7,5.5,17,0,0,0,1,1,,80,,00:00:45,00:00:00,350,False,False
 115,Terrapin,Small,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/terrapin/Terrapin,Flight Ready,[],166850,14.5,6,19.5,157,1204,0,1,1,2568100,220,,00:07:52,00:02:38,3940,True,False
 169,Valkyrie,Large,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/anvil-valkyrie/Valkyrie,Flight Ready,[],621046.06,28,9.5,38,165,1100,30,5,5,4454400,375,,00:16:52,00:05:38,8440,True,False
 35,Khartu-al,Medium,Aopoa,AOPOA,https://robertsspaceindustries.com/pledge/ships/khartu/Khartu-Al,Flight Ready,[],72711,13,8,30.5,223,1322,0,1,1,2113900,170,,00:05:04,00:01:41,2535,True,False
@@ -56,7 +56,7 @@ id,name,size,manufacturer_name,manufacturer_code,url,status,loaners,mass,beam,he
 112,Dragonfly Black,Snub,Drake Interplanetary,DRAK,https://robertsspaceindustries.com/pledge/ships/drake-dragonfly/Dragonfly-Black,Flight Ready,[],2068,2.5,1.5,6,90,500,0,2,1,272700,40,5454,00:00:06,00:00:00,55,False,True
 61,Herald,Small,Drake Interplanetary,DRAK,https://robertsspaceindustries.com/pledge/ships/herald/Herald,Flight Ready,[],65705,12.5,9,23.5,174,1361,0,1,1,1181100,85,,00:02:01,00:00:40,1015,True,False
 108,Blade,Small,Esperia,ESPR,https://robertsspaceindustries.com/pledge/ships/vanduul-blade/Blade,Flight Ready,[],27019,20,5.5,16.5,213,1237,0,1,1,3370600,275,,00:04:13,00:01:24,2110,True,False
-93,Glaive,Medium,Esperia,ESPR,https://robertsspaceindustries.com/pledge/ships/esperia-glaive/Glaive,Flight Ready,[],76520,31.5,8.5,31,180,1224,0,1,1,,,,00:07:36,00:02:32,3800,True,False
+93,Glaive,Medium,Esperia,ESPR,https://robertsspaceindustries.com/pledge/ships/esperia-glaive/Glaive,Flight Ready,[],76520,31.5,8.5,31,180,1224,0,1,1,,350,,00:07:36,00:02:32,3800,True,False
 117,Prowler,Medium,Esperia,ESPR,https://robertsspaceindustries.com/pledge/ships/prowler/Prowler,Flight Ready,[],171700,32,15,34,178,1116,0,2,2,4248200,440,,00:12:39,00:04:13,6330,True,False
 211,Talon,Snub,Esperia,ESPR,https://robertsspaceindustries.com/pledge/ships/talon/Talon,Flight Ready,[],51352.06,23.5,8.6,26,207,1235,0,1,1,1854500,100,,00:06:45,00:02:15,3375,True,False
 212,Talon Shrike,Snub,Esperia,ESPR,https://robertsspaceindustries.com/pledge/ships/talon/Talon-Shrike,Flight Ready,[],51352.06,23.5,8.6,26,208,1236,0,1,1,2259200,115,,00:09:17,00:03:06,4645,True,False
@@ -69,13 +69,13 @@ id,name,size,manufacturer_name,manufacturer_code,url,status,loaners,mass,beam,he
 32,Freelancer MAX,Medium,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/misc-freelancer/Freelancer-MAX,Flight Ready,[],360208,36,9.5,38,154,1005,120,4,2,2181500,150,,00:11:42,00:03:54,5850,True,False
 33,Freelancer MIS,Medium,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/misc-freelancer/Freelancer-MIS,Flight Ready,[],236353,23.5,9.5,38,154,1005,36,4,2,2537800,175,,00:12:36,00:04:12,6300,True,False
 109,Prospector,Small,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/misc-prospector/Prospector,Flight Ready,[],137396,15,7,24,150,1155,32,1,1,2061000,155,41220,00:09:00,00:03:00,3040,True,False
-126,Razor,Snub,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/razor/Razor,Flight Ready,[],11701,8.2,2.7,11.5,252,1345,0,1,1,1761200,,52836,00:06:05,00:02:01,3040,True,False
-157,Razor EX,Snub,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/razor/Razor-EX,Flight Ready,[],11700,8.2,2.7,11.5,252,1345,0,1,1,1878800,,,00:06:05,00:02:01,3040,True,False
-158,Razor LX,Snub,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/razor/Razor-LX,Flight Ready,[],11701,8.2,2.7,11.5,252,1345,0,1,1,1823800,,,00:06:05,00:02:01,3040,True,False
+126,Razor,Snub,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/razor/Razor,Flight Ready,[],11701,8.2,2.7,11.5,252,1345,0,1,1,1761200,145,52836,00:06:05,00:02:01,3040,True,False
+157,Razor EX,Snub,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/razor/Razor-EX,Flight Ready,[],11700,8.2,2.7,11.5,252,1345,0,1,1,1878800,155,,00:06:05,00:02:01,3040,True,False
+158,Razor LX,Snub,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/razor/Razor-LX,Flight Ready,[],11701,8.2,2.7,11.5,252,1345,0,1,1,1823800,150,,00:06:05,00:02:01,3040,True,False
 90,Reliant Kore,Medium,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/reliant/Reliant-Kore,Flight Ready,[],39353,28.5,4,14.5,166,1150,6,2,1,744700,65,,00:00:40,00:00:00,340,True,False
-105,Reliant Mako,Medium,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/reliant/Reliant-Mako,Flight Ready,[],39353,28.5,4,14.5,166,1150,0,2,1,780000,,,00:00:40,00:00:00,340,True,False
-106,Reliant Sen,Medium,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/reliant/Reliant-Sen,Flight Ready,[],39353,28.5,4,14.5,166,1150,2,2,1,840000,,,00:00:40,00:00:00,340,True,False
-107,Reliant Tana,Medium,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/reliant/Reliant-Tana,Flight Ready,[],39168,28.5,4,14.5,165,1150,1,2,1,870000,,,00:00:51,00:00:00,425,True,False
+105,Reliant Mako,Medium,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/reliant/Reliant-Mako,Flight Ready,[],39353,28.5,4,14.5,166,1150,0,2,1,780000,95,,00:00:40,00:00:00,340,True,False
+106,Reliant Sen,Medium,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/reliant/Reliant-Sen,Flight Ready,[],39353,28.5,4,14.5,166,1150,2,2,1,840000,85,,00:00:40,00:00:00,340,True,False
+107,Reliant Tana,Medium,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/reliant/Reliant-Tana,Flight Ready,[],39168,28.5,4,14.5,165,1150,1,2,1,870000,75,,00:00:51,00:00:00,425,True,False
 88,Starfarer,Large,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/misc-starfarer/Starfarer,Flight Ready,[],3555606,46.5,23.5,101,85,888,291,6,4,6651500,300,,00:18:00,00:06:00,9000,True,False
 89,Starfarer Gemini,Large,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/misc-starfarer/Starfarer-Gemini,Flight Ready,[],3583690,46.5,23.5,101,88,889,291,6,4,6191500,340,,00:22:30,00:07:30,11250,True,False
 159,100i,Snub,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/origin-100/100i,Flight Ready,[],48143,11,4,19.3,210,1000,2,1,1,654000,50,,00:01:16,00:00:00,635,True,False
@@ -89,7 +89,7 @@ id,name,size,manufacturer_name,manufacturer_code,url,status,loaners,mass,beam,he
 141,600i Explorer,Large,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/600i/600i-Explorer,Flight Ready,[],1622067,52,17,91.5,109,955,40,5,2,9475100,475,142126,00:35:06,00:11:42,17550,True,False
 140,600i Touring,Large,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/600i/600i-Touring,Flight Ready,[],1613414,52,17,91.5,109,955,16,5,3,9894000,435,,00:35:06,00:11:42,17550,True,False
 123,85X,Snub,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/85x/85X,Flight Ready,[],19833.5,10,2,13,190,1183,0,2,1,574500,50,14362,00:01:01,00:00:00,510,True,False
-55,890 Jump,Capital,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/890-jump/890-Jump,Flight Ready,[],44237159,71,40,205,80,900,32,8,3,32294500,,,01:07:30,00:22:30,33750,True,False
+55,890 Jump,Capital,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/890-jump/890-Jump,Flight Ready,[],44237159,71,40,205,80,900,32,8,3,32294500,950,,01:07:30,00:22:30,33750,True,False
 22,M50,Snub,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/origin-m50/M50,Flight Ready,[],10552,10,3,11,245,1342,0,1,1,1193800,100,35814,00:06:05,00:02:01,3040,True,False
 5,Aurora CL,Small,Roberts Space Industries,RSI,https://robertsspaceindustries.com/pledge/ships/rsi-aurora/Aurora-CL,Flight Ready,[],26422,8,4,18,138,1093,6,1,1,487600,45,,00:00:40,00:00:00,340,True,False
 1,Aurora ES,Small,Roberts Space Industries,RSI,https://robertsspaceindustries.com/pledge/ships/rsi-aurora/Aurora-ES,Flight Ready,[],26486,8,4,18,143,1141,3,1,1,124100,20,2482,00:00:30,00:00:00,255,True,False
@@ -109,36 +109,36 @@ id,name,size,manufacturer_name,manufacturer_code,url,status,loaners,mass,beam,he
 137,Cyclone RN,Vehicle,Tumbril,TMBL,https://robertsspaceindustries.com/pledge/ships/cyclone/Cyclone-RN,Flight Ready,[],6439,4,3,6,0,0,0,2,1,26500,65,,00:00:12,00:00:00,105,False,False
 135,Cyclone TR,Vehicle,Tumbril,TMBL,https://robertsspaceindustries.com/pledge/ships/cyclone/Cyclone-TR,Flight Ready,[],6422,4,2.5,6,0,0,0,3,1,26500,65,,00:00:12,00:00:00,105,False,False
 154,Nova,Vehicle,Tumbril,TMBL,https://robertsspaceindustries.com/pledge/ships/nova-tank/Nova,Flight Ready,[],134950,7,5,16,0,0,0,3,1,515200,120,,00:01:08,00:00:23,570,False,False
-26,Scythe,Medium,Vanduul,VANDUUL,https://robertsspaceindustries.com/pledge/ships/scythe/Scythe,Flight Ready,[],72091,23,8.5,31,194,1230,0,1,1,,,,00:05:54,00:01:58,2955,True,False
+26,Scythe,Medium,Vanduul,VANDUUL,https://robertsspaceindustries.com/pledge/ships/scythe/Scythe,Flight Ready,[],72091,23,8.5,31,194,1230,0,1,1,,300,,00:05:54,00:01:58,2955,True,False
 27,Idris-M,Capital,Aegis Dynamics,AEGS,https://robertsspaceindustries.com/pledge/ships/aegis-idris/Idris-M,In Production,"['Hammerhead', 'Vanguard Harbinger', 'MPUV Personnel']",37854373,126,46,242,45,1462,831,28,8,,1000,,01:52:30,00:37:30,56250,True,False
 28,Idris-P,Capital,Aegis Dynamics,AEGS,https://robertsspaceindustries.com/pledge/ships/aegis-idris/Idris-P,In Production,"['Hammerhead', 'Vanguard Harbinger', 'MPUV Personnel']",37310200,126,46,233,0,0,995,28,8,,1500,,,,,True,
 63,Javelin,Capital,Aegis Dynamics,AEGS,https://robertsspaceindustries.com/pledge/ships/aegis-javelin/Javelin,In Production,"['Hammerhead', 'Vanguard Harbinger', 'MPUV Cargo']",111080494,198,72,480,50,900,5400,80,12,,3000,,02:48:45,00:56:15,84375,True,False
 91,Genesis,Large,Crusader Industries,CRSD,https://robertsspaceindustries.com/pledge/ships/starliner/Genesis,In Production,['C2 Hercules'],3120000,90,16,85,0,0,300,8,2,,400,,,,,True,
-41,Hull C,Large,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/hull/Hull-C,In Production,['Caterpillar'],886930,55,55,125,0,0,4608,4,2,,,,,,,True,
+41,Hull C,Large,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/hull/Hull-C,In Production,['Caterpillar'],886930,55,55,125,0,0,4608,4,2,,250,,,,,True,
 186,Nautilus,Large,Aegis Dynamics,AEGS,https://robertsspaceindustries.com/pledge/ships/aegis-nautilus/Nautilus,In Concept,"['Hammerhead', 'Avenger Titan']",13526320,72,21.6,125,115,,64,8,4,,725,,,,,True,
 99,Retaliator Base,Large,Aegis Dynamics,AEGS,https://robertsspaceindustries.com/pledge/ships/aegis-retaliator/Retaliator-Base,In Concept,[],300392,42.5,12.5,69.5,185,815,0,7,4,,150,,,,,True,
 155,Vulcan,Medium,Aegis Dynamics,AEGS,https://robertsspaceindustries.com/pledge/ships/vulcan/Vulcan,In Concept,['Freelancer'],625330,16.5,10,38.5,210,,0,3,1,,200,,,,,True,
 103,Crucible,Large,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/crucible/Crucible,In Concept,['Constellation Andromeda'],3650500,50,20,90,0,0,230,8,3,,350,,,,,True,
 37,F7A Hornet,Small,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7A-Hornet,In Concept,[],74132,22,7,22.5,200,1337,0,1,1,,,,,,,True,False
 224,Liberator,Large,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/liberator/Liberator,In Concept,"['M2 Hercules', 'F7C-M Super Hornet']",,67,25,119,115,,400,2,1,,575,,,,,True,
-174,San'tok.yāi,Medium,Aopoa,AOPOA,https://robertsspaceindustries.com/pledge/ships/aopoa-santokyai/Santoky-i,In Concept,['Khartu-al'],106566,23,10,24,265,,0,1,1,,,,,,,True,
+174,San'tok.yāi,Medium,Aopoa,AOPOA,https://robertsspaceindustries.com/pledge/ships/aopoa-santokyai/Santoky-i,In Concept,['Khartu-al'],106566,23,10,24,265,,0,1,1,,220,,,,,True,
 176,SRV,Small,ARGO Astronautics,ARGO,https://robertsspaceindustries.com/pledge/ships/argo-srv/SRV,In Concept,['Prospector'],231680,19.5,8.7,28.5,200,,10,1,1,,150,,,,,True,
 36,Merchantman,Large,Banu,BANU,https://robertsspaceindustries.com/pledge/ships/merchantman/Merchantman,In Concept,"['C2 Hercules', 'Defender']",9635000,160,65,160,0,0,2880,8,4,,550,,,,,True,
-149,Pioneer,Capital,Consolidated Outland,CNOU,https://robertsspaceindustries.com/pledge/ships/pioneer/Pioneer,In Concept,"['Caterpillar', 'Nomad']",35600000,125,30,200,85,,600,8,4,,,,,,,True,
+149,Pioneer,Capital,Consolidated Outland,CNOU,https://robertsspaceindustries.com/pledge/ships/pioneer/Pioneer,In Concept,"['Caterpillar', 'Nomad']",35600000,125,30,200,85,,600,8,4,,850,,,,,True,
 178,Corsair,Large,Drake Interplanetary,DRAK,https://robertsspaceindustries.com/pledge/ships/drake-corsair/Corsair,In Concept,"['Constellation Aquila', 'Buccaneer']",,27,31,55,,,72,4,4,,215,,,,,True,
 170,Kraken,Capital,Drake Interplanetary,DRAK,https://robertsspaceindustries.com/pledge/ships/drake-kraken/Kraken,In Concept,"['Hammerhead', 'Caterpillar', 'Buccaneer']",,104,64,270,,,3792,10,10,,1650,,,,,True,
 175,Kraken Privateer,Capital,Drake Interplanetary,DRAK,https://robertsspaceindustries.com/pledge/ships/drake-kraken/Kraken-Privateer,In Concept,"['Hammerhead', 'Caterpillar', 'Buccaneer']",,104,64,270,,,768,10,10,,2000,,,,,True,
 165,Vulture,Small,Drake Interplanetary,DRAK,https://robertsspaceindustries.com/pledge/ships/drake-vulture/Vulture,In Concept,"['Prospector', 'Buccaneer']",114591,16,9,33,165,,0,1,1,,140,,,,,True,
 222,Railen,Small,Gatac Manufacture,GAMA,https://robertsspaceindustries.com/pledge/ships/railen/Railen,In Concept,"['Constellation Taurus', 'Khartu-al']",,52,67,53,,,320,4,4,,225,,,,,True,
 97,Endeavor,Capital,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/misc-endeavor/Endeavor,In Concept,"['Starfarer', 'Cutlass Red']",4055000,48,20,200,0,0,500,5,3,,350,,,,,True,
-84,Hull A,Small,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/hull/Hull-A,In Concept,['Freelancer'],122650,8,4,22,0,0,48,1,1,,,,,,,True,
-85,Hull B,Medium,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/hull/Hull-B,In Concept,['Freelancer MAX'],387500,15.5,17,49,0,0,384,1,1,,,,,,,True,
-86,Hull D,Capital,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/hull/Hull-D,In Concept,"['Caterpillar', 'C2 Hercules']",1216000,70,70,209,0,0,20736,5,3,,,,,,,True,
-87,Hull E,Capital,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/hull/Hull-E,In Concept,"['Caterpillar', 'C2 Hercules']",1652000,104,104,372,0,0,98304,5,4,,,,,,,True,
+84,Hull A,Small,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/hull/Hull-A,In Concept,['Freelancer'],122650,8,4,22,0,0,48,1,1,,60,,,,,True,
+85,Hull B,Medium,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/hull/Hull-B,In Concept,['Freelancer MAX'],387500,15.5,17,49,0,0,384,1,1,,90,,,,,True,
+86,Hull D,Capital,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/hull/Hull-D,In Concept,"['Caterpillar', 'C2 Hercules']",1216000,70,70,209,0,0,20736,5,3,,350,,,,,True,
+87,Hull E,Capital,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/hull/Hull-E,In Concept,"['Caterpillar', 'C2 Hercules']",1652000,104,104,372,0,0,98304,5,4,,650,,,,,True,
 227,Odyssey,Large,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/odyssey/Odyssey,In Concept,"['Carrack', 'Reliant Kore']",,90,35,140,,,252,6,1,,700,,,,,True,
-208,G12,Vehicle,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/origin-g12/G12,In Concept,['Cyclone TR'],,5.8,2.7,7.2,50,,0,,,,,,,,,False,
-210,G12a,Vehicle,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/origin-g12/G12a,In Concept,['Cyclone AA'],,5.8,2.7,7.2,45,,0,,,,,,,,,False,
-209,G12r,Vehicle,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/origin-g12/G12r,In Concept,['Cyclone RC'],,5.8,2.7,7.2,55,,0,,,,,,,,,False,
+208,G12,Vehicle,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/origin-g12/G12,In Concept,['Cyclone TR'],,5.8,2.7,7.2,50,,0,,,,60,,,,,False,
+210,G12a,Vehicle,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/origin-g12/G12a,In Concept,['Cyclone AA'],,5.8,2.7,7.2,45,,0,,,,65,,,,,False,
+209,G12r,Vehicle,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/origin-g12/G12r,In Concept,['Cyclone RC'],,5.8,2.7,7.2,55,,0,,,,65,,,,,False,
 143,X1,Snub,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/x1/X1,In Concept,"['Aurora MR', 'Nox']",1610,1.3,1.5,5.5,0,0,0,1,1,,40,,,,,False,
 147,X1 Force,Snub,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/x1/X1-Force,In Concept,"['Aurora MR', 'Nox']",1682,1.3,1.5,5.5,0,0,0,1,1,,50,,,,,False,
 145,X1 Velocity,Snub,Origin Jumpworks,ORIG,https://robertsspaceindustries.com/pledge/ships/x1/X1-Velocity,In Concept,"['Aurora MR', 'Nox']",1528,1.3,1.5,5.5,0,0,0,1,1,,45,,,,,False,
