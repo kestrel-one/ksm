@@ -52,17 +52,15 @@ Display a list of all Hornets as an ASCII table with basic fields:
 
 ```
 $ ./ksm.py export -n '*hornet*' -g basic -f table
-+-----+--------------------------------+-------+
-|  id |              name              |  size |
-+-----+--------------------------------+-------+
-|  37 |           F7A Hornet           | small |
-|  11 |           F7C Hornet           | small |
-| 122 |      F7C Hornet Wildfire       | small |
-|  15 |       F7C-M Super Hornet       | small |
-| 177 | F7C-M Super Hornet Heartseeker | small |
-|  14 |      F7C-R Hornet Tracker      | small |
-|  13 |       F7C-S Hornet Ghost       | small |
-+-----+--------------------------------+-------+
++----+----------------------+-------+
+| id |         name         |  size |
++----+----------------------+-------+
+| 11 |      F7C Hornet      | Small |
+| 15 |  F7C-M Super Hornet  | Small |
+| 14 | F7C-R Hornet Tracker | Small |
+| 13 |  F7C-S Hornet Ghost  | Small |
+| 37 |      F7A Hornet      | Small |
++----+----------------------+-------+
 ```
 
 Display the same thing but in JSON format and with all fields:
