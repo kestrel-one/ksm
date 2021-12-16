@@ -1,9 +1,11 @@
 #! /usr/bin/env python
 
 import click
+import csv
 import re
 import sys
 
+from collections import OrderedDict
 from fields.export import merge_fields, sort_value, ALL_FIELDS, FIELD_GROUPS
 from fields.normalize import (
     Index,
@@ -16,6 +18,8 @@ from fields.normalize import (
 from fields.validate import validate_fields
 from utils.cli import render_csv, render_json, render_table
 from utils.sources import all_sources, resolve_sources, source_choices
+
+RE_CHANGELOG_VERSION = re.compile(r'^[0-9]+\.')
 
 DEFAULT_SORT = ('source.asc', 'name.asc')
 EXPORT_SORT = ('status.desc', 'manufacturer_code.asc', 'name.asc')
@@ -76,6 +80,19 @@ def export(names, cols, fmt, colgroups, sort):
     sort_ships(ships, sort)
     exports = [filter_cols(ship, cols) for ship in ships]
     print(RENDERERS[fmt](exports, cols))
+
+
+@cli.command()
+def changelog():
+    changelog = []
+    with open('CHANGELOG', 'r') as f:
+        changelog = parse_changelog(f.readlines())
+    with open('changelog.tsv', 'w') as f:
+        w = csv.writer(f, delimiter='\t')
+        w.writerow(['Release', 'Change'])
+        for version, changes in changelog:
+            for change in changes:
+                w.writerow([version, change])
 
 
 @cli.command()
@@ -181,6 +198,21 @@ def reverse_sort_key(value):
     elif t == int or t == float:
         return -value
     return ValueError('Cannot reverse key of type: %s' % t)
+
+
+def parse_changelog(lines):
+    versions = []
+    curindex = -1
+    for line in lines:
+        line = line.strip()
+        if line == '' or line.startswith('--'):
+            continue
+        if RE_CHANGELOG_VERSION.match(line):
+            curindex += 1
+            versions.append((line, []))
+        elif line.startswith('-'):
+            versions[curindex][1].append(line[2:])
+    return versions
 
 
 if __name__ == '__main__':

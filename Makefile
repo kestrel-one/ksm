@@ -9,10 +9,13 @@ environment: activate
 activate: .virtualenv
 	ln -s .virtualenv/bin/activate activate
 
-release: export
+release: export changelog
 	echo $(VERSION) > VERSION
 	sed -i "s/^.*version_option.*$\/@click.version_option('$(VERSION)')/g" ksm.py
 	sed -i "s/^.*Current Release:.*$\/Current Release: $(VERSION)/g" README.md
+
+changelog:
+	$(ACTIVATE); ./ksm.py changelog
 
 export: export_csv export_json export_table
 
@@ -33,5 +36,4 @@ clean:
 	rm -rf .virtualenv
 	rm -f activate
 
-.PHONY: all clean environment export export_csv export_json export_table release
-
+.PHONY: all changelog clean environment export export_csv export_json export_table release
