@@ -19,14 +19,17 @@ changelog:
 
 export: export_csv export_json export_table
 
-export_csv:
-	$(ACTIVATE); ./ksm.py export -f csv > ships.csv
+export_csv: dist
+	$(ACTIVATE); ./ksm.py export -f csv > dist/ships.csv
 
-export_json:
-	$(ACTIVATE); ./ksm.py export -f json > ships.json
+export_json: dist
+	$(ACTIVATE); ./ksm.py export -f json > dist/ships.json
 
-export_table:
-	$(ACTIVATE); ./ksm.py export -f table > ships.txt
+export_table: dist
+	$(ACTIVATE); ./ksm.py export -f table > dist/ships.txt
+
+dist:
+	mkdir dist
 
 .virtualenv:
 	virtualenv --prompt ksm .virtualenv
