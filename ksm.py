@@ -5,7 +5,7 @@ import csv
 import re
 import sys
 
-from collections import OrderedDict
+from collections import defaultdict
 from fields.export import merge_fields, sort_value, ALL_FIELDS, FIELD_GROUPS
 from fields.normalize import (
     Index,
@@ -65,6 +65,51 @@ def dump(sources, names, cols, fmt, colgroups, sort):
     sort_ships(ships, sort)
     ships = [filter_cols(ship, cols) for ship in ships]
     print(RENDERERS[fmt](ships, cols))
+
+
+@cli.command()
+@ click.argument('sources', required=True, nargs=-1, type=source_choices)
+@ click.option('-c', '--col', type=click.Choice(ALL_FIELDS))
+@ click.option('-f', '--fmt', default='table', type=click.Choice(RENDERERS.keys()))
+def xref(sources, col, fmt):
+    # TODO: Document in README
+    # TODO: Clean up the code below, bit nasty :)
+    xref_cols = ('id', 'source', 'name')
+    resolved_sources = resolve_sources(sources)
+    ships = export_all()
+    sort_ships(ships, DEFAULT_SORT)
+    cols = xref_cols + (col,)
+    ships_by_id = defaultdict(dict)
+    for ship in ships:
+        ships_by_id[ship['id']][ship['source']] = ship
+    xships = []
+    xcols = []
+    for ships in ships_by_id.values():
+        xship = {'_values': []}
+        for source_name, _ in resolved_sources:
+            ship = ships.get(source_name, {})
+            for col in cols:
+                value = ship.get(col)
+                if col == 'source':
+                    continue
+                if col in xref_cols:
+                    if col not in xship or xship[col] is None:
+                        xship[col] = value
+                    if col not in xcols:
+                        xcols.append(col)
+                    continue
+                xcol = source_name + '_' + col
+                if xcol not in xcols:
+                    xcols.append(xcol)
+                xship[xcol] = value
+                if value is not None:
+                    xship['_values'].append(value)
+        xships.append(xship)
+    for ship in xships:
+        values = ship['_values']
+        ship['valid'] = len(values) == 0 or values.count(values[0]) == len(values)
+    xships = [ship for ship in xships if not ship['valid']]
+    print(RENDERERS[fmt](xships, xcols))
 
 
 @cli.command()
