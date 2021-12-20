@@ -102,8 +102,7 @@ def xref(sources, col, fmt):
                 if xcol not in xcols:
                     xcols.append(xcol)
                 xship[xcol] = value
-                if value is not None:
-                    xship['_values'].append(value)
+                xship['_values'].append(value)
         xships.append(xship)
     for ship in xships:
         values = ship['_values']
