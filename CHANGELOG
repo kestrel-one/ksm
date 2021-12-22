@@ -1,3 +1,10 @@
+2.1.7
+-----
+
+- Update data for 3.16.0
+- Add xref command for finding inconsistencies across sources
+- Add changelog command for generating changes CSV 
+
 2.1.6
 -----
 
