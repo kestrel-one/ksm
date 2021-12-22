@@ -1,5 +1,6 @@
 ACTIVATE=. .virtualenv/bin/activate
 VERSION=2.1.8
+SCVERSION=3.16.0
 
 all:
 	@echo "make [environment|clean]"
@@ -13,6 +14,7 @@ release: export changelog
 	echo $(VERSION) > VERSION
 	sed -i "s/^.*version_option.*$\/@click.version_option('$(VERSION)')/g" ksm.py
 	sed -i "s/^.*Current Release:.*$\/Current Release: $(VERSION)/g" README.md
+	sed -i "s/^.*Star Citizen Version:.*$\/Star Citizen Version: $(SCVERSION)/g" README.md
 
 changelog:
 	$(ACTIVATE); ./ksm.py changelog
