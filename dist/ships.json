@@ -1488,9 +1488,9 @@
     "buy_auec": null,
     "buy_usd": 235,
     "rent_auec": null,
-    "ins_std_claim_time": null,
-    "ins_exp_claim_time": null,
-    "ins_exp_cost": null,
+    "ins_std_claim_time": "00:06:45",
+    "ins_exp_claim_time": "00:02:15",
+    "ins_exp_cost": 3375,
     "has_quantum_drive": true,
     "has_gravlev": false
   },

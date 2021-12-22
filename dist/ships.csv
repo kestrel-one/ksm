@@ -53,7 +53,7 @@ id,name,size,manufacturer_name,manufacturer_code,url,status,loaners,mass,beam,he
 56,Cutlass Black,Medium,Drake Interplanetary,DRAK,https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Black,Flight Ready,[],246577,26.5,10,29,165,1114,46,2,2,1385300,100,27706,00:06:45,00:02:15,3375,True,False
 58,Cutlass Blue,Medium,Drake Interplanetary,DRAK,https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Blue,Flight Ready,[],226700,26,14,36,198,1210,12,3,2,2493500,175,,00:07:25,00:02:29,3715,True,False
 57,Cutlass Red,Medium,Drake Interplanetary,DRAK,https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Red,Flight Ready,[],226700,26,14,36,183,1198,12,2,2,1810500,135,,00:09:27,00:03:09,4725,True,False
-228,Cutlass Steel,Medium,Drake Interplanetary,DRAK,https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Steel,Flight Ready,,246577,26.5,14,36,150,900,0,3,1,,235,,,,,True,False
+228,Cutlass Steel,Medium,Drake Interplanetary,DRAK,https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Steel,Flight Ready,,246577,26.5,14,36,150,900,0,3,1,,235,,00:06:45,00:02:15,3375,True,False
 112,Dragonfly Black,Snub,Drake Interplanetary,DRAK,https://robertsspaceindustries.com/pledge/ships/drake-dragonfly/Dragonfly-Black,Flight Ready,[],2068,2.5,1.5,6,65,500,0,2,1,272700,40,5454,00:00:06,00:00:00,55,False,True
 61,Herald,Small,Drake Interplanetary,DRAK,https://robertsspaceindustries.com/pledge/ships/herald/Herald,Flight Ready,[],65705,12.5,9,23.5,174,1361,0,1,1,1181100,85,,00:02:01,00:00:40,1015,True,False
 108,Blade,Small,Esperia,ESPR,https://robertsspaceindustries.com/pledge/ships/vanduul-blade/Blade,Flight Ready,[],27019,20,5.5,16.5,213,1237,0,1,1,3370600,275,,00:04:13,00:01:24,2110,True,False
