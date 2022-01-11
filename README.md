@@ -1,7 +1,7 @@
 Kestrel's Ship Matrix (KSM)
 ===========================
 
-Current Release: 2.1.8
+Current Release: 2.1.9
 
 Star Citizen Version: 3.16.0
 

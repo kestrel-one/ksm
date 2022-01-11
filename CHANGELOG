@@ -1,3 +1,9 @@
+2.1.9
+-----
+
+- Add QT speed field
+- CSV and Table renders now use dashes to represent null values
+
 2.1.8
 -----
 

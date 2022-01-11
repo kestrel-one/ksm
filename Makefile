@@ -1,5 +1,5 @@
 ACTIVATE=. .virtualenv/bin/activate
-VERSION=2.1.8
+VERSION=2.1.9
 SCVERSION=3.16.0
 
 all:
