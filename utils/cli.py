@@ -18,15 +18,26 @@ def render_csv(items, cols):
     w = csv.writer(out)
     w.writerow(cols)
     for item in items:
-        w.writerow([item.get(col, '') for col in cols])
+        w.writerow(render_text_row(item, cols))
     return out.getvalue()
 
 
 def render_table(items, cols):
     table = PrettyTable()
     table.field_names = cols
-    table.add_rows([[item.get(col, '') for col in cols] for item in items])
+    for item in items:
+        table.add_row(render_text_row(item, cols))
     return table.get_string()
+
+
+def render_text_row(item, cols):
+    row = []
+    for col in cols:
+        val = item.get(col, '')
+        if val is None:
+            val = '-'
+        row.append(val)
+    return row
 
 
 def render_json(items, cols):
