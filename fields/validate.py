@@ -48,6 +48,14 @@ def validate_fields(ships, merged_ships):
             continue
         problems.append('Flight ready ships is not buyable in game: %s' % ship['name'])
 
+    # all flight ready ships should have non-null quantum speed
+    for ship in merged_ships:
+        if ship['status'] != 'Flight Ready':
+            continue
+        if ship['qt_speed'] is not None:
+            continue
+        problems.append('Flight ready ships should have non-null QT speed: %s' % ship['name'])
+
     # min/max crew should either both be defined or none
     # max should always be greater than min
     for ship in merged_ships:

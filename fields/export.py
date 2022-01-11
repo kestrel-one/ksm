@@ -6,7 +6,7 @@ FIELD_GROUPS = {
     'manufacturer': ('manufacturer_name', 'manufacturer_code'),
     'store': ('url', 'status', 'loaners'),
     'dimensions': ('mass', 'beam', 'height', 'length'),
-    'flight': ('scm_speed', 'max_speed'),
+    'flight': ('scm_speed', 'max_speed', 'qt_speed'),
     'cargo': ('cargo', 'max_crew', 'min_crew'),
     'prices': ('buy_auec', 'buy_usd', 'rent_auec'),
     'insurance': ('ins_std_claim_time', 'ins_exp_claim_time', 'ins_exp_cost'),

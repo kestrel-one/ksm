@@ -63,6 +63,7 @@ def export():
             'cargo': integer(item['ship']['Cargo']),
             'max_speed': decimal(item['ship']['FlightCharacteristics']['MaxSpeed']),
             'scm_speed': decimal(item['ship']['FlightCharacteristics']['ScmSpeed']),
+            'qt_speed': integer(int(item['ship']['QuantumTravel']['Speed'] / 1000)),
 
             'has_quantum_drive': decimal(item['ship']['QuantumTravel']['Speed']) > 0,
             'has_gravlev': item['ship'].get('IsGravlev', False),
