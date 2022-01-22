@@ -37,7 +37,6 @@ def export():
             'rent_auec': min_price(item['rent_at']),
             'url': ship_url(item['store_url']),
             'loaners': (item['loaner'] or '').split(','),
-            'cargo': integer(item['scu']),
             'min_crew': min_crew,
             'max_crew': max_crew,
         }
