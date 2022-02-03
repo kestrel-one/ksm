@@ -153,8 +153,9 @@ def validate():
 @cli.command()
 @ click.option('-c', '--commit', type=str)
 @ click.option('-f', '--fmt', default='table', type=click.Choice(RENDERERS.keys()))
+@ click.option('-o', '--only', multiple=True, type=str)
 @ click.option('-i', '--ignore', multiple=True, type=str)
-def compare(commit, fmt, ignore):
+def compare(commit, fmt, only, ignore):
     file1 = '/tmp/ksm_ships_last.json'
     os.system('git show HEAD:dist/ships.json > ' + file1)
     with open(file1, 'r') as f:
@@ -165,6 +166,8 @@ def compare(commit, fmt, ignore):
         ships2 = json.load(f)
     diffs = compare_ship_lists(ships1, ships2)
     diffs = [diff for diff in diffs if diff['field'] not in ignore]
+    if len(only) > 0:
+        diffs = [diff for diff in diffs if diff['field'] in only]
     print(RENDERERS[fmt](diffs, ['id', 'name', 'field', 'value1', 'value2']))
 
 
