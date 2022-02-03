@@ -53,6 +53,7 @@ SHIP_SKIPPABLE = (
     'PTV',
     'Sabre Comet',
     'Ursa Rover Fortuna',
+    'HoverQuad',
 )
 
 SHIP_NOT_BUYABLE = (
