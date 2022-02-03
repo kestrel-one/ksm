@@ -1,0 +1,39 @@
++-----+-----------------------+--------------------+----------+--------+
+|  id |          name         |       field        |  value1  | value2 |
++-----+-----------------------+--------------------+----------+--------+
+|  59 |        Redeemer       |       cargo        |    0     |   2    |
+|  59 |        Redeemer       |      buy_usd       |   325    |  250   |
+| 191 |       C8 Pisces       |      buy_auec      |  406000  |   -    |
+|  11 |       F7C Hornet      |       cargo        |    0     |   2    |
+| 201 |          MOLE         |       cargo        |    96    |   0    |
+| 164 |      A2 Hercules      |       cargo        |   234    |  216   |
+| 164 |      A2 Hercules      |      buy_usd       |   750    |  700   |
+| 110 |       Buccaneer       |      buy_usd       |   117    |  110   |
+|  24 |      Caterpillar      |       cargo        |   564    |  576   |
+|  24 |      Caterpillar      |      buy_usd       |   306    |  295   |
+| 211 |         Talon         |      buy_usd       |   100    |  115   |
+|  31 |     Freelancer DUR    |       cargo        |    28    |   36   |
+| 109 |       Prospector      |       cargo        |    32    |   0    |
+| 106 |      Reliant Sen      |       cargo        |    2     |   0    |
+| 140 |      600i Touring     |        mass        | 1613414  |   0    |
+| 140 |      600i Touring     |     scm_speed      |   109    |   0    |
+| 140 |      600i Touring     |     max_speed      |   955    |   0    |
+| 140 |      600i Touring     |      qt_speed      |  124143  |   0    |
+| 140 |      600i Touring     |       cargo        |    16    |   12   |
+| 140 |      600i Touring     | ins_std_claim_time | 00:35:06 |   -    |
+| 140 |      600i Touring     | ins_exp_claim_time | 00:11:42 |   -    |
+| 140 |      600i Touring     |    ins_exp_cost    |  17550   |   -    |
+| 140 |      600i Touring     | has_quantum_drive  |   True   | False  |
+|  55 |        890 Jump       |       cargo        |    32    |  100   |
+|  3  |       Aurora LX       |      buy_usd       |    35    |   30   |
+|  49 | Constellation Phoenix |       cargo        |    80    |   96   |
+| 134 |        Cyclone        |       cargo        |    0     |   1    |
+|  27 |        Idris-M        |       cargo        |   831    |   0    |
+|  63 |        Javelin        |       cargo        |   5400   |  3446  |
+| 155 |         Vulcan        |       cargo        |    0     |   12   |
+|  36 |      Merchantman      |      buy_usd       |   550    |  500   |
+| 165 |        Vulture        |       cargo        |    0     |   12   |
+| 208 |          G12          |       cargo        |    0     |   2    |
+| 210 |          G12a         |       cargo        |    0     |   -    |
+| 209 |          G12r         |       cargo        |    0     |   -    |
++-----+-----------------------+--------------------+----------+--------+
