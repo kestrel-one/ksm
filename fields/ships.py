@@ -31,6 +31,7 @@ SHIP_RENAME_MAP = {
     'Genesis Starliner': 'Genesis',
     'Nova Tank': 'Nova',
     'Enveador': 'Endeavor',
+    'Ursa': 'Ursa Rover',
 }
 
 SHIP_SKIPPABLE = (
@@ -53,7 +54,8 @@ SHIP_SKIPPABLE = (
     'PTV',
     'Sabre Comet',
     'Ursa Rover Fortuna',
-    'HoverQuad',
+    'HoverQuad', # TODO REMOVE WHEN RSI PAGE IS UP
+    'Idris-K', # TODO: REMOVE WHEN RSI PAGE IS UP
 )
 
 SHIP_NOT_BUYABLE = (
@@ -70,6 +72,8 @@ SHIP_NOT_BUYABLE = (
     'Sabre Raven',
     'Scythe',
     'Spartan',
+    'Cutlass Steel',
+    'C8 Pisces',
 )
 
 SHIP_SIZE_MAP = {

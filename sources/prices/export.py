@@ -1,4 +1,4 @@
-import csv
+import json
 import pathlib
 import re
 
@@ -9,38 +9,44 @@ from fields.types import (
     integer,
 )
 
-DATA_PATH = pathlib.Path(__file__).parent / 'data.csv'
+DATA_PATH = pathlib.Path(__file__).parent / 'data.json'
 COL_NAMES = ['name', 'price']
-RE_PRICE = re.compile('[$,]')
+RE_PRICE = re.compile('[^0-9\.]')
 
 
 def export():
+    with open(DATA_PATH, 'r') as f:
+        items = json.load(f)
     ships = []
-    for item in create_items():
+    for item in items:
         name = ship_name(item['name'])
         if name is None:
             continue
         ships.append({
             'source': 'prices',
             'name': name,
-            'buy_usd': integer(RE_PRICE.sub('', item['price'])),
+            'buy_usd': parse_price(item['standalone_cost']),
+            'loaners': parse_loaners(item['loaner']),
         })
     return ships
 
 
-def create_items():
-    rows = []
-    with open(DATA_PATH, 'r') as f:
-        rows = list(csv.reader(f))[1:]
-    items = []
-    max_col = len(COL_NAMES)
-    for i, row in enumerate(rows):
-        item = {'source': 'prices'}
-        for j, col in enumerate(row):
-            if j < max_col:
-                item[COL_NAMES[j]] = col
-        items.append(item)
-    return items
+def parse_price(text):
+    if '(' in text:
+        text = text.split('(')[0]
+    price = RE_PRICE.sub('', text)
+    price = integer(price) if price else None
+    return price
+
+
+def parse_loaners(text):
+    if text == '-' or text == '—':
+        return []
+    loaners = []
+    for name in text.split(','):
+        name = ship_name(name)
+        loaners.append(name)
+    return loaners
 
 
 if __name__ == '__main__':

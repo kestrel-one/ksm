@@ -22,15 +22,16 @@ ALL_FIELDS = tuple(
 FIELD_GROUPS['all'] = ALL_FIELDS
 
 FIELD_SOURCES = {
-    '__default__': ('spat', 'uex', 'scunpacked', 'rsi', 'prices'),
+    '__default__': ('spat', 'scunpacked', 'rsi', 'prices'),
     'name': ('rsi',),
     'manufacturer_name': ('rsi',),
     'manufacturer_code': ('rsi',),
     'id': ('rsi',),
     'url': ('rsi',),
     'status': ('rsi',),
-    'min_crew': ('spat', 'scunpacked', 'rsi', 'uex'),
-    'max_crew': ('spat', 'scunpacked', 'rsi', 'uex'),
+    'loaners': ('prices',),
+    'min_crew': ('spat', 'scunpacked', 'rsi'),
+    'max_crew': ('spat', 'scunpacked', 'rsi'),
     'buy_usd': ('prices', 'uex'),
     'buy_auec': ('scunpacked', 'uex'),
 }
