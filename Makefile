@@ -1,6 +1,6 @@
 ACTIVATE=. .virtualenv/bin/activate
-VERSION=2.1.10
-SCVERSION=3.16.1
+VERSION=2.1.9
+SCVERSION=3.16.0
 
 all:
 	@echo "make [environment|clean]"
@@ -12,9 +12,9 @@ activate: .virtualenv
 
 release: export changelog
 	echo $(VERSION) > VERSION
-	sed -i "" "s/^.*version_option.*$\/@click.version_option('$(VERSION)')/g" ksm.py
-	sed -i "" "s/^.*Current Release:.*$\/Current Release: $(VERSION)/g" README.md
-	sed -i "" "s/^.*Star Citizen Version:.*$\/Star Citizen Version: $(SCVERSION)/g" README.md
+	sed -i "s/^.*version_option.*$\/@click.version_option('$(VERSION)')/g" ksm.py
+	sed -i "s/^.*Current Release:.*$\/Current Release: $(VERSION)/g" README.md
+	sed -i "s/^.*Star Citizen Version:.*$\/Star Citizen Version: $(SCVERSION)/g" README.md
 
 changelog:
 	$(ACTIVATE); ./ksm.py changelog
@@ -42,6 +42,3 @@ clean:
 	rm -f activate
 
 .PHONY: all changelog clean environment export export_csv export_json export_table release
-
-# TODO: Add comparison generator
-# ./ksm.py compare -i loaners -f table old-ships.json dist/ships.json
