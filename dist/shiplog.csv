@@ -1,2 +1,50 @@
-id,name,field,old_value,new_value
+name,field,old_value,new_value
+Redeemer,loaners,['Valkyrie'],[]
+Redeemer,cargo,0,2
+Sabre Raven,buy_usd,185,-
+C8 Pisces,loaners,[],-
+C8 Pisces,buy_auec,406000,-
+Carrack,loaners,[],"['C8 Pisces', 'Ursa Rover']"
+F7C Hornet,cargo,0,2
+Spartan,loaners,-,[]
+MOLE,cargo,96,0
+A2 Hercules,loaners,['M2 Hercules'],[]
+A2 Hercules,cargo,234,216
+Ares Inferno,loaners,"['Hurricane', 'F7C-M Super Hornet']",[]
+Ares Inferno,buy_usd,220,250
+Ares Ion,loaners,"['Hurricane', 'F7C-M Super Hornet']",[]
+Ares Ion,buy_usd,220,250
+Buccaneer,buy_usd,117,110
+Caterpillar,cargo,564,576
+Caterpillar,buy_usd,306,330
+Cutlass Steel,loaners,-,[]
+Talon,buy_usd,100,115
+Freelancer DUR,cargo,28,36
+Prospector,cargo,32,0
+Reliant Sen,cargo,2,0
+400i,loaners,"['Constellation Andromeda', '325a']",[]
+600i Touring,cargo,16,12
+890 Jump,cargo,32,100
+Constellation Phoenix,cargo,80,96
+Cyclone,cargo,0,1
+Nova,loaners,[],['Aurora MR']
+Idris-M,cargo,831,0
+Javelin,cargo,5400,3446
+Hull C,buy_usd,250,350
+Retaliator Base,loaners,[],['Retaliator Bomber']
+Vulcan,cargo,0,12
+F7A Hornet,loaners,[],-
+Pioneer,loaners,"['Caterpillar', 'Nomad']",['CaterpillarNomad']
+Vulture,cargo,0,12
+Hull A,buy_usd,60,80
+Hull B,buy_usd,90,140
+Hull D,buy_usd,350,450
+Hull E,buy_usd,650,750
+G12,cargo,0,2
+G12a,cargo,0,-
+G12r,cargo,0,-
+G12r,buy_usd,65,60
+Orion,loaners,"['MOLE', 'Prospector']","['Prospector', 'MOLE']"
+Polaris,loaners,[],"['Hammerhead', 'Vanguard Harbinger']"
+Scorpius,loaners,['Hurricane'],"['F7C-M Super Hornet', 'Hurricane']"
 
