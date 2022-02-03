@@ -151,13 +151,13 @@ def validate():
 
 
 @cli.command()
-@ click.option('-c', '--commit', type=str)
+@ click.option('-c', '--commit', default='HEAD', type=str)
 @ click.option('-f', '--fmt', default='table', type=click.Choice(RENDERERS.keys()))
 @ click.option('-o', '--only', multiple=True, type=str)
 @ click.option('-i', '--ignore', multiple=True, type=str)
 def compare(commit, fmt, only, ignore):
     file1 = '/tmp/ksm_ships_last.json'
-    os.system('git show HEAD:dist/ships.json > ' + file1)
+    os.system('git show '+commit+':dist/ships.json > ' + file1)
     with open(file1, 'r') as f:
         ships1 = json.load(f)
     file2 = '/tmp/ksm_ships_current.json'
