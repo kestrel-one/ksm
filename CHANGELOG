@@ -1,3 +1,10 @@
+2.1.11
+------
+
+- Update data for LIVE 3.16.1
+- Add SHIPLOG table to compare changes between updates 
+- Use starcitizen.tools for USD price data and loaners
+
 2.1.9
 -----
 
@@ -7,7 +14,7 @@
 2.1.8
 -----
 
-- Update scunpacked data for 3.16.0 live
+- Update scunpacked data for LIVE 3.16.0
 
 2.1.7
 -----
