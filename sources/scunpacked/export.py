@@ -46,8 +46,8 @@ def export():
         class_name = item['ship']['ClassName']
         if '_BIS' in class_name:
             continue
-        if class_name.endswith('_Modifiers'):
-            # Not sure what this is but it was creating duplicate ships
+        if class_name.endswith('_Modifiers') or class_name.startswith('TEST_'):
+            # Not sure what these are but they were creating duplicate ships
             continue
         name = ship_name(base_name)
         if name is None:
