@@ -1,4 +1,4 @@
-name,field,old_value,new_value
+Ship Name,Field Name,Old Value,New Value
 Redeemer,loaners,['Valkyrie'],[]
 Redeemer,cargo,0,2
 Sabre Raven,buy_usd,185,-
