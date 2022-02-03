@@ -20,7 +20,7 @@ changelog:
 	$(ACTIVATE); ./ksm.py changelog
 
 compare:
-	$(ACTIVATE); ./ksm.py -f csv compare > dist/shiplog.csv
+	$(ACTIVATE); ./ksm.py compare -f csv > dist/shiplog.csv
 
 export: export_csv export_json export_table
 
