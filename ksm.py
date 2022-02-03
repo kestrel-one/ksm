@@ -168,7 +168,7 @@ def compare(commit, fmt, only, ignore):
     diffs = [diff for diff in diffs if diff['field'] not in ignore]
     if len(only) > 0:
         diffs = [diff for diff in diffs if diff['field'] in only]
-    print(RENDERERS[fmt](diffs, ['id', 'name', 'field', 'old_value', 'new_value']))
+    print(RENDERERS[fmt](diffs, ['name', 'field', 'old_value', 'new_value']))
 
 
 def resolve_cols(cols, groups, default_group, no_source=False):

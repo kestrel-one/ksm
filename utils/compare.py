@@ -26,7 +26,6 @@ def compare_ships(ship1, ship2):
     diffs = []
     for field in changes:
         diffs.append({
-            'id': ship1['id'],
             'name': ship1['name'],
             'field': field,
             'old_value': changes[field][0],
