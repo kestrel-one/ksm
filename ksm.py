@@ -3,6 +3,7 @@
 import click
 import csv
 import json
+import os
 import re
 import sys
 
@@ -150,13 +151,16 @@ def validate():
 
 
 @cli.command()
-@ click.argument('file1', required=True, type=str)
-@ click.argument('file2', required=True, type=str)
-@ click.option('-f', '--fmt', default='json', type=click.Choice(RENDERERS.keys()))
+@ click.option('-c', '--commit', type=str)
+@ click.option('-f', '--fmt', default='table', type=click.Choice(RENDERERS.keys()))
 @ click.option('-i', '--ignore', multiple=True, type=str)
-def compare(file1, file2, fmt, ignore):
+def compare(commit, fmt, ignore):
+    file1 = '/tmp/ksm_ships_last.json'
+    os.system('git show HEAD:dist/ships.json > ' + file1)
     with open(file1, 'r') as f:
         ships1 = json.load(f)
+    file2 = '/tmp/ksm_ships_current.json'
+    os.system('./ksm.py export -f json > ' + file2)
     with open(file2, 'r') as f:
         ships2 = json.load(f)
     diffs = compare_ship_lists(ships1, ships2)
