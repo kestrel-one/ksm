@@ -87,5 +87,6 @@ if __name__ == '__main__':
     export()
 
 # Command for digging into exported JSON:
-# cat sources/scunpacked/data.json | jq '[ .[] | select(.ship.Name|contains("C2")) ][] | {ship}[] | {Name,ClassName,Role,Size,Cargo,Crew,Mass,IsSpaceship}'
+# cat sources/scunpacked/ships.json | jq '[ .[] | select(.ship.Name|contains("C2")) ][]'
+# cat sources/scunpacked/ships.json | jq '[ .[] | select(.ship.Name|contains("C2")) ][] | {ship}[] | {Name,ClassName,Role,Size,Cargo,Crew,Mass,IsSpaceship}'
 # cat sources/scunpacked/shops.json | jq '.[] | .inventory[] | select(.displayName != null) | select(.displayName|contains("Avenger Stalker"))'
