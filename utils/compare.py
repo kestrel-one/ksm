@@ -29,8 +29,8 @@ def compare_ships(ship1, ship2):
             'id': ship1['id'],
             'name': ship1['name'],
             'field': field,
-            'value1': changes[field][0],
-            'value2': changes[field][1],
+            'old_value': changes[field][0],
+            'new_value': changes[field][1],
             })
     return diffs
 
