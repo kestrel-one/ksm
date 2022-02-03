@@ -1,0 +1,52 @@
++-----+-----------------------+----------+-------------------------------------+--------------------------------------+
+|  id |          name         |  field   |              old_value              |              new_value               |
++-----+-----------------------+----------+-------------------------------------+--------------------------------------+
+|  59 |        Redeemer       | loaners  |             ['Valkyrie']            |                  []                  |
+|  59 |        Redeemer       |  cargo   |                  0                  |                  2                   |
+| 148 |      Sabre Raven      | buy_usd  |                 185                 |                  -                   |
+| 191 |       C8 Pisces       | loaners  |                  []                 |                  -                   |
+| 191 |       C8 Pisces       | buy_auec |                406000               |                  -                   |
+|  62 |        Carrack        | loaners  |                  []                 |     ['C8 Pisces', 'Ursa Rover']      |
+|  11 |       F7C Hornet      |  cargo   |                  0                  |                  2                   |
+| 225 |        Spartan        | loaners  |                  -                  |                  []                  |
+| 201 |          MOLE         |  cargo   |                  96                 |                  0                   |
+| 164 |      A2 Hercules      | loaners  |           ['M2 Hercules']           |                  []                  |
+| 164 |      A2 Hercules      |  cargo   |                 234                 |                 216                  |
+| 198 |      Ares Inferno     | loaners  | ['Hurricane', 'F7C-M Super Hornet'] |                  []                  |
+| 198 |      Ares Inferno     | buy_usd  |                 220                 |                 250                  |
+| 200 |        Ares Ion       | loaners  | ['Hurricane', 'F7C-M Super Hornet'] |                  []                  |
+| 200 |        Ares Ion       | buy_usd  |                 220                 |                 250                  |
+| 110 |       Buccaneer       | buy_usd  |                 117                 |                 110                  |
+|  24 |      Caterpillar      |  cargo   |                 564                 |                 576                  |
+|  24 |      Caterpillar      | buy_usd  |                 306                 |                 330                  |
+| 228 |     Cutlass Steel     | loaners  |                  -                  |                  []                  |
+| 211 |         Talon         | buy_usd  |                 100                 |                 115                  |
+|  31 |     Freelancer DUR    |  cargo   |                  28                 |                  36                  |
+| 109 |       Prospector      |  cargo   |                  32                 |                  0                   |
+| 106 |      Reliant Sen      |  cargo   |                  2                  |                  0                   |
+| 223 |          400i         | loaners  | ['Constellation Andromeda', '325a'] |                  []                  |
+| 140 |      600i Touring     |  cargo   |                  16                 |                  12                  |
+|  55 |        890 Jump       |  cargo   |                  32                 |                 100                  |
+|  49 | Constellation Phoenix |  cargo   |                  80                 |                  96                  |
+| 134 |        Cyclone        |  cargo   |                  0                  |                  1                   |
+| 154 |          Nova         | loaners  |                  []                 |            ['Aurora MR']             |
+|  27 |        Idris-M        |  cargo   |                 831                 |                  0                   |
+|  63 |        Javelin        |  cargo   |                 5400                |                 3446                 |
+|  41 |         Hull C        | buy_usd  |                 250                 |                 350                  |
+|  99 |    Retaliator Base    | loaners  |                  []                 |        ['Retaliator Bomber']         |
+| 155 |         Vulcan        |  cargo   |                  0                  |                  12                  |
+|  37 |       F7A Hornet      | loaners  |                  []                 |                  -                   |
+| 149 |        Pioneer        | loaners  |       ['Caterpillar', 'Nomad']      |         ['CaterpillarNomad']         |
+| 165 |        Vulture        |  cargo   |                  0                  |                  12                  |
+|  84 |         Hull A        | buy_usd  |                  60                 |                  80                  |
+|  85 |         Hull B        | buy_usd  |                  90                 |                 140                  |
+|  86 |         Hull D        | buy_usd  |                 350                 |                 450                  |
+|  87 |         Hull E        | buy_usd  |                 650                 |                 750                  |
+| 208 |          G12          |  cargo   |                  0                  |                  2                   |
+| 210 |          G12a         |  cargo   |                  0                  |                  -                   |
+| 209 |          G12r         |  cargo   |                  0                  |                  -                   |
+| 209 |          G12r         | buy_usd  |                  65                 |                  60                  |
+|  71 |         Orion         | loaners  |        ['MOLE', 'Prospector']       |        ['Prospector', 'MOLE']        |
+| 116 |        Polaris        | loaners  |                  []                 | ['Hammerhead', 'Vanguard Harbinger'] |
+| 221 |        Scorpius       | loaners  |            ['Hurricane']            | ['F7C-M Super Hornet', 'Hurricane']  |
++-----+-----------------------+----------+-------------------------------------+--------------------------------------+
