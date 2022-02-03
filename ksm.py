@@ -2,6 +2,7 @@
 
 import click
 import csv
+import json
 import re
 import sys
 
@@ -17,6 +18,7 @@ from fields.normalize import (
 )
 from fields.validate import validate_fields
 from utils.cli import render_csv, render_json, render_table
+from utils.compare import compare_ship_lists
 from utils.sources import all_sources, resolve_sources, source_choices
 
 RE_CHANGELOG_VERSION = re.compile(r'^[0-9]+\.')
@@ -145,6 +147,21 @@ def validate():
     merged_ships = merge_fields(ships)
     for problem in validate_fields(ships, merged_ships):
         print(problem)
+
+
+@cli.command()
+@ click.argument('file1', required=True, type=str)
+@ click.argument('file2', required=True, type=str)
+@ click.option('-f', '--fmt', default='json', type=click.Choice(RENDERERS.keys()))
+@ click.option('-i', '--ignore', multiple=True, type=str)
+def compare(file1, file2, fmt, ignore):
+    with open(file1, 'r') as f:
+        ships1 = json.load(f)
+    with open(file2, 'r') as f:
+        ships2 = json.load(f)
+    diffs = compare_ship_lists(ships1, ships2)
+    diffs = [diff for diff in diffs if diff['field'] not in ignore]
+    print(RENDERERS[fmt](diffs, ['id', 'name', 'field', 'value1', 'value2']))
 
 
 def resolve_cols(cols, groups, default_group, no_source=False):
