@@ -10,7 +10,7 @@ environment: activate
 activate: .virtualenv
 	ln -s .virtualenv/bin/activate activate
 
-release: export changelog
+release: compare export changelog
 	echo $(VERSION) > VERSION
 	sed -i "s/^.*version_option.*$\/@click.version_option('$(VERSION)')/g" ksm.py
 	sed -i "s/^.*Current Release:.*$\/Current Release: $(VERSION)/g" README.md
@@ -18,6 +18,9 @@ release: export changelog
 
 changelog:
 	$(ACTIVATE); ./ksm.py changelog
+
+compare:
+	$(ACTIVATE); ./ksm.py compare > SHIPLOG
 
 export: export_csv export_json export_table
 
