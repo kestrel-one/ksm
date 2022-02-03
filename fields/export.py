@@ -34,6 +34,7 @@ FIELD_SOURCES = {
     'max_crew': ('spat', 'scunpacked', 'rsi'),
     'buy_usd': ('prices', 'uex'),
     'buy_auec': ('scunpacked', 'uex'),
+    'rent_auec': ('scunpacked', 'uex'),
 }
 
 STATUS_LEVELS = {
