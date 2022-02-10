@@ -18,8 +18,7 @@ def update():
 def fetch():
     html = ''
     with progress('Downloading', 1) as bar:
-        # html = requests.get(PAGE_URL).content
-        html = open('/tmp/vehicles.html').read()
+        html = requests.get(PAGE_URL).content
         bar.update(1)
     return html
 
@@ -47,10 +46,6 @@ def parse(html):
                 row[header] = col
             rows.append(row)
         bar.update(1)
-    for row in rows:
-        if 'Liberator' not in row['name']:
-            continue
-        print(row)
     return rows
 
 
