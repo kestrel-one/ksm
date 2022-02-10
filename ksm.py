@@ -165,10 +165,10 @@ def compare(commit, fmt, only, ignore):
     with open(file2, 'r') as f:
         ships2 = json.load(f)
     diffs = compare_ship_lists(ships1, ships2)
-    diffs = [diff for diff in diffs if diff['Field Name'] not in ignore]
+    diffs = [diff for diff in diffs if diff['Type'] not in ignore]
     if len(only) > 0:
-        diffs = [diff for diff in diffs if diff['Field Name'] in only]
-    print(RENDERERS[fmt](diffs, ['Ship Name', 'Field Name', 'Old Value', 'New Value']))
+        diffs = [diff for diff in diffs if diff['Type'] in only]
+    print(RENDERERS[fmt](diffs, ['Ship Name', 'Type', 'Old Value', 'New Value']))
 
 
 def resolve_cols(cols, groups, default_group, no_source=False):

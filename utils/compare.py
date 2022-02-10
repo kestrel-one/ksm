@@ -1,21 +1,30 @@
-def compare_ship_lists(ships1, ships2):
-    index2 = compare_index(ships2, 'id')
+def compare_ship_lists(old_ships, new_ships):
+    old_index = compare_index(old_ships, 'id')
+    new_index = compare_index(new_ships, 'id')
     diffs = []
-    for ship1 in ships1:
-        ship2 = ships2[index2[ship1['id']]]
-        diffs.extend(compare_ships(ship1, ship2))
+    for old_ship in old_ships:
+        new_ship = new_ships[new_index[old_ship['id']]]
+        diffs.extend(compare_ships(old_ship, new_ship))
+    for new_ship in new_ships:
+        if new_ship['id'] not in old_index:
+            diffs.append({
+                'Ship Name': new_ship['name'],
+                'Type': 'ship',
+                'Old Value': None,
+                'New Value': 'added',
+                })
     return diffs
 
 
-def compare_ships(ship1, ship2):
+def compare_ships(old_ship, new_ship):
     fields = {}
-    for field in ship1:
-        fields[field] = [ship1[field], ship2.get(field)]
-    for field in ship2:
+    for field in old_ship:
+        fields[field] = [old_ship[field], new_ship.get(field)]
+    for field in new_ship:
         if field in fields:
-            fields[field][1] = ship2[field]
+            fields[field][1] = new_ship[field]
         else:
-            fields[field] = [None, ship2[field]]
+            fields[field] = [None, new_ship[field]]
     changes = {}
     for field in fields:
         values = fields[field]
@@ -26,8 +35,8 @@ def compare_ships(ship1, ship2):
     diffs = []
     for field in changes:
         diffs.append({
-            'Ship Name': ship1['name'],
-            'Field Name': field,
+            'Ship Name': old_ship['name'],
+            'Type': field,
             'Old Value': changes[field][0],
             'New Value': changes[field][1],
             })
