@@ -54,7 +54,6 @@ SHIP_SKIPPABLE = (
     'PTV',
     'Sabre Comet',
     'Ursa Rover Fortuna',
-    'HoverQuad', # TODO REMOVE WHEN RSI PAGE IS UP
     'Idris-K', # TODO: REMOVE WHEN RSI PAGE IS UP
 )
 
@@ -74,6 +73,7 @@ SHIP_NOT_BUYABLE = (
     'Spartan',
     'Cutlass Steel',
     'C8 Pisces',
+    'HoverQuad',
 )
 
 SHIP_SIZE_MAP = {
