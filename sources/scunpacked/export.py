@@ -49,6 +49,8 @@ def export():
         if class_name.endswith('_Modifiers') or class_name.startswith('TEST_'):
             # Not sure what these are but they were creating duplicate ships
             continue
+        if class_name == 'AEGS_Idris_Distance_Destruction':
+            continue
         name = ship_name(base_name)
         if name is None:
             continue
