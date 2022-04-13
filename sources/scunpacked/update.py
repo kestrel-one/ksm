@@ -9,7 +9,7 @@ from utils.cli import progress
 
 THIS_DIR = pathlib.Path(__file__).parent
 # DATA_URL = 'https://github.com/richardthombs/scunpacked/tarball/master'
-DATA_URL = 'https://github.com/kestrel-one/scunpacked/tarball/3_16_1'
+DATA_URL = 'https://github.com/kestrel-one/scunpacked/tarball/3_17_0_PTU'
 SHIPS_DATA_PATH = THIS_DIR / 'ships.json'
 SHOPS_DATA_PATH = THIS_DIR / 'shops.json'
 
