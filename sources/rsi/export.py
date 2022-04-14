@@ -35,11 +35,14 @@ def item_to_ship(item):
         return None
     maxc = integer(item['max_crew'], True)
     minc = integer(item['min_crew'], True) or maxc
+    status = ship_status(item['production_status'])
+    if name == 'Hull A':
+        status = 'Flight Ready'
     return {
         'source': 'rsi',
         'id': integer(item['id']),
         'name': name,
-        'status': ship_status(item['production_status']),
+        'status': status,
         'url': ship_url(item['url']),
         'size': ship_size(item['size'], name),
         'manufacturer_name': ship_manu_name(item['manufacturer']['name']),

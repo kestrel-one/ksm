@@ -1,7 +1,7 @@
 Kestrel's Ship Matrix (KSM)
 ===========================
 
-Current Release: 2.1.12
+Current Release: 3.17.0-PTU
 
 KSM is a script that outputs a list of all ships in Star Citizen. It can be used
 to seed your own database of Star Citizen ships, imported into a spreadsheet for

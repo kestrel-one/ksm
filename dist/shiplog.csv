@@ -1,3 +1,32 @@
 Ship Name,Type,Old Value,New Value
-HoverQuad,ship,-,added
+Redeemer,buy_auec,-,8675500
+Redeemer,ins_std_claim_time,00:17:33,00:31:56
+Redeemer,ins_exp_claim_time,00:05:51,00:07:19
+Redeemer,ins_exp_cost,8775,10970
+Spartan,buy_auec,-,255500
+RAFT,buy_auec,-,1853000
+HoverQuad,buy_auec,-,88000
+A2 Hercules,buy_auec,-,5525000
+Ares Inferno,buy_auec,-,2859000
+Ares Ion,buy_auec,-,2859000
+Cutlass Steel,buy_auec,-,1355300
+Dragonfly Black,scm_speed,65,85
+P-72 Archimedes,buy_auec,-,150000
+Razor LX,scm_speed,252,275
+Razor LX,max_speed,1345,1400
+400i,buy_auec,-,6352700
+400i,ins_std_claim_time,00:16:12,00:35:00
+400i,ins_exp_claim_time,00:05:24,00:06:30
+400i,ins_exp_cost,8100,7258
+Cyclone MT,buy_auec,-,26500
+Hull A,size,Small,Snub
+Hull A,scm_speed,0,108
+Hull A,max_speed,0,1000
+Hull A,qt_speed,-,89383
+Hull A,cargo,48,0
+Hull A,ins_std_claim_time,-,00:00:42
+Hull A,ins_exp_claim_time,-,00:00:00
+Hull A,ins_exp_cost,-,360
+Hull A,has_gravlev,-,False
+Expanse,ship,-,added
 
