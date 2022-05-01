@@ -126,9 +126,7 @@ def ship_size(size, name):
 
 
 def ship_cargo(ship, name):
-    if name == 'Hull A':
-        return ship_cargo_from_grids(ship)
-    return integer(ship['ship']['Cargo'])
+    return ship_cargo_from_grids(ship)
 
 
 def ship_cargo_from_grids(ship):
