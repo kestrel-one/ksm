@@ -19,7 +19,7 @@ id,name,size,manufacturer_name,manufacturer_code,url,status,loaners,mass,beam,he
 191,C8 Pisces,Small,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/anvil-pisces/C8-Pisces,Flight Ready,-,48143,10,3.2,12,142,1150,148971,4,3,1,-,60,-,00:00:40,00:00:00,340,True,False
 192,C8X Pisces Expedition,Small,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/anvil-pisces/C8X-Pisces-Expedition,Flight Ready,[],48143,10,3.2,13,142,1150,148971,4,3,1,406000,45,-,00:00:40,00:00:00,340,True,False
 62,Carrack,Large,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/carrack/Carrack,Flight Ready,"['C8 Pisces', 'Ursa Rover']",97858,76.5,30,126.5,208,1236,59588,456,6,4,26657500,600,-,00:45:00,00:15:00,22500,True,False
-11,F7C Hornet,Small,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-Hornet,Flight Ready,[],74132,21.5,6.5,22.5,191,1228,138543,2,1,1,1492700,110,-,00:06:45,00:02:15,3375,True,False
+11,F7C Hornet,Small,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-Hornet,Flight Ready,[],74132,21.5,6.5,22.5,191,1228,138543,3,1,1,1492700,110,-,00:06:45,00:02:15,3375,True,False
 15,F7C-M Super Hornet,Small,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-M-Super-Hornet,Flight Ready,[],78886,24,6.5,25.5,191,1229,138543,0,2,1,2132600,180,-,00:07:36,00:02:32,3800,True,False
 14,F7C-R Hornet Tracker,Small,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-R-Hornet-Tracker,Flight Ready,[],74197,21.5,6.5,22.5,192,1229,138543,0,1,1,1832100,140,-,00:06:45,00:02:15,3375,True,False
 13,F7C-S Hornet Ghost,Small,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-S-Hornet-Ghost,Flight Ready,[],73724,21.5,6.5,22.5,192,1229,138543,0,1,1,1654100,125,-,00:06:45,00:02:15,3375,True,False
@@ -31,7 +31,7 @@ id,name,size,manufacturer_name,manufacturer_code,url,status,loaners,mass,beam,he
 169,Valkyrie,Large,Anvil Aerospace,ANVL,https://robertsspaceindustries.com/pledge/ships/anvil-valkyrie/Valkyrie,Flight Ready,[],621046.06,28,9.5,38,165,1100,124143,30,5,5,4454400,375,-,00:16:52,00:05:38,8440,True,False
 35,Khartu-al,Medium,Aopoa,AOPOA,https://robertsspaceindustries.com/pledge/ships/khartu/Khartu-Al,Flight Ready,[],72711,13,8,30.5,223,1322,138543,0,1,1,2113900,170,-,00:05:04,00:01:41,2535,True,False
 131,Nox,Snub,Aopoa,AOPOA,https://robertsspaceindustries.com/pledge/ships/nox/Nox,Flight Ready,[],1249,1.5,1.5,5.5,80,600,0,0,1,1,349200,45,5238,00:00:06,00:00:00,55,False,True
-201,MOLE,Medium,ARGO Astronautics,ARGO,https://robertsspaceindustries.com/pledge/ships/argo-mole/MOLE,Flight Ready,[],1169686,25,15,45,128,1090,76968,0,4,1,5130500,315,-,00:16:12,00:02:42,4050,True,False
+201,MOLE,Medium,ARGO Astronautics,ARGO,https://robertsspaceindustries.com/pledge/ships/argo-mole/MOLE,Flight Ready,[],1169686,25,15,45,128,1090,76968,96,4,1,5130500,315,-,00:16:12,00:02:42,4050,True,False
 114,MPUV Cargo,Snub,ARGO Astronautics,ARGO,https://robertsspaceindustries.com/pledge/ships/argo/MPUV-Cargo,Flight Ready,[],13030,8.5,4.3,9.5,112,899,0,2,1,1,224200,35,-,00:00:10,00:00:00,205,False,False
 113,MPUV Personnel,Snub,ARGO Astronautics,ARGO,https://robertsspaceindustries.com/pledge/ships/argo/MPUV-Personnel,Flight Ready,[],13005,8.5,4.3,9.3,115,919,0,0,1,1,233000,40,-,00:00:10,00:00:00,205,False,False
 226,RAFT,Medium,ARGO Astronautics,ARGO,https://robertsspaceindustries.com/pledge/ships/raft/RAFT,Flight Ready,[],1169686,23,12,39.5,135,840,74485,96,2,1,1853000,125,-,00:14:00,00:02:00,2050,True,False
@@ -71,7 +71,7 @@ id,name,size,manufacturer_name,manufacturer_code,url,status,loaners,mass,beam,he
 32,Freelancer MAX,Medium,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/misc-freelancer/Freelancer-MAX,Flight Ready,[],360208,36,9.5,38,154,1005,124143,120,4,2,2181500,150,-,00:11:42,00:03:54,5850,True,False
 33,Freelancer MIS,Medium,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/misc-freelancer/Freelancer-MIS,Flight Ready,[],236353,23.5,9.5,38,154,1005,235872,36,4,2,2537800,175,-,00:12:36,00:04:12,6300,True,False
 84,Hull A,Small,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/hull/Hull-A,Flight Ready,[],122650,10,8,24,108,1000,89383,64,1,1,-,90,-,00:00:42,00:00:00,360,True,False
-109,Prospector,Small,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/misc-prospector/Prospector,Flight Ready,[],137396,15,7,24,150,1155,89383,0,1,1,2061000,155,41220,00:09:00,00:03:00,3040,True,False
+109,Prospector,Small,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/misc-prospector/Prospector,Flight Ready,[],137396,15,7,24,150,1155,89383,32,1,1,2061000,155,41220,00:09:00,00:03:00,3040,True,False
 126,Razor,Snub,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/razor/Razor,Flight Ready,[],11701,8.2,2.7,11.5,252,1345,89383,0,1,1,1761200,145,52836,00:06:05,00:02:01,3040,True,False
 157,Razor EX,Snub,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/razor/Razor-EX,Flight Ready,[],11700,8.2,2.7,11.5,252,1345,171317,0,1,1,1878800,155,-,00:06:05,00:02:01,3040,True,False
 158,Razor LX,Snub,MISC,MISC,https://robertsspaceindustries.com/pledge/ships/razor/Razor-LX,Flight Ready,[],11701,8.2,2.7,11.5,275,1400,89383,0,1,1,1823800,150,-,00:06:05,00:02:01,3040,True,False
