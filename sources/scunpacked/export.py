@@ -4,6 +4,7 @@ import pathlib
 from collections import defaultdict
 
 from fields.ships import (
+    ship_cargo,
     ship_manu_code,
     ship_manu_name,
     ship_name,
@@ -62,7 +63,7 @@ def export():
             'manufacturer_name': ship_manu_name(item['ship']['Manufacturer']['Name']),
             'manufacturer_code': ship_manu_code(item['ship']['Manufacturer']['Code']),
             'mass': decimal(item['ship']['Mass']),
-            'cargo': integer(item['ship']['Cargo']),
+            'cargo': ship_cargo(item, name),
             'max_speed': decimal(item['ship']['FlightCharacteristics']['MaxSpeed']),
             'scm_speed': decimal(item['ship']['FlightCharacteristics']['ScmSpeed']),
             'qt_speed': integer(int(item['ship']['QuantumTravel']['Speed'] / 1000)),

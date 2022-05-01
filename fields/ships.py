@@ -125,6 +125,18 @@ def ship_size(size, name):
     return size.capitalize()
 
 
+def ship_cargo(ship, name):
+    if name == 'Hull A':
+        return ship_cargo_from_grids(ship)
+    return integer(ship['ship']['Cargo'])
+
+
+def ship_cargo_from_grids(ship):
+    grids = find_cargo_grids(ship)
+    cargo = int(sum([grid['Capacity']/2 for grid in grids]))
+    return cargo
+
+
 def ship_status(status):
     status = status.strip()
     if status == 'flight-ready':
@@ -157,3 +169,18 @@ def ship_crew_range(s):
     min_crew = integer(parts[0])
     max_crew = integer(parts[1] if len(parts) > 1 else min_crew)
     return (min_crew, max_crew)
+
+
+def find_cargo_grids(items):
+    return tuple(value for key, value in flatten_objects(items) if key == 'CargoGrid')
+
+
+def flatten_objects(items):
+    keys = items if isinstance(items, dict) else range(len(items))
+    results = []
+    for key in keys:
+        value = items[key]
+        results.append((key, value))
+        if isinstance(value, list) or isinstance(value, dict):
+            results.extend(flatten_objects(value))
+    return results
