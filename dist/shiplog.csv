@@ -19,14 +19,23 @@ Razor LX,max_speed,1345,1400
 400i,ins_exp_claim_time,00:05:24,00:06:30
 400i,ins_exp_cost,8100,7258
 Cyclone MT,buy_auec,-,26500
-Hull A,size,Small,Snub
+Hull C,loaners,['Caterpillar'],"['Hull A', 'C2 Hercules']"
+Hull A,status,In Concept,Flight Ready
+Hull A,loaners,['Freelancer'],[]
+Hull A,beam,8,10
+Hull A,height,4,8
+Hull A,length,22,24
 Hull A,scm_speed,0,108
 Hull A,max_speed,0,1000
 Hull A,qt_speed,-,89383
-Hull A,cargo,48,0
+Hull A,cargo,48,64
+Hull A,buy_usd,80,90
 Hull A,ins_std_claim_time,-,00:00:42
 Hull A,ins_exp_claim_time,-,00:00:00
 Hull A,ins_exp_cost,-,360
 Hull A,has_gravlev,-,False
+Hull B,loaners,['Freelancer MAX'],['Hull A']
+Hull D,loaners,"['Caterpillar', 'C2 Hercules']","['Hull A', 'C2 Hercules']"
+Hull E,loaners,"['Caterpillar', 'C2 Hercules']","['Hull A', 'C2 Hercules']"
 Expanse,ship,-,added
 

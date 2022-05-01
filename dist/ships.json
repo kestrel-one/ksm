@@ -1993,26 +1993,24 @@
   {
     "id": 84,
     "name": "Hull A",
-    "size": "Snub",
+    "size": "Small",
     "manufacturer_name": "MISC",
     "manufacturer_code": "MISC",
     "url": "https://robertsspaceindustries.com/pledge/ships/hull/Hull-A",
     "status": "Flight Ready",
-    "loaners": [
-      "Freelancer"
-    ],
+    "loaners": [],
     "mass": 122650,
-    "beam": 8,
-    "height": 4,
-    "length": 22,
+    "beam": 10,
+    "height": 8,
+    "length": 24,
     "scm_speed": 108,
     "max_speed": 1000,
     "qt_speed": 89383,
-    "cargo": 0,
+    "cargo": 64,
     "max_crew": 1,
     "min_crew": 1,
     "buy_auec": null,
-    "buy_usd": 80,
+    "buy_usd": 90,
     "rent_auec": null,
     "ins_std_claim_time": "00:00:42",
     "ins_exp_claim_time": "00:00:00",
@@ -3333,7 +3331,8 @@
     "url": "https://robertsspaceindustries.com/pledge/ships/hull/Hull-C",
     "status": "In Production",
     "loaners": [
-      "Caterpillar"
+      "Hull A",
+      "C2 Hercules"
     ],
     "mass": 886930,
     "beam": 55,
@@ -3883,7 +3882,7 @@
     "url": "https://robertsspaceindustries.com/pledge/ships/hull/Hull-B",
     "status": "In Concept",
     "loaners": [
-      "Freelancer MAX"
+      "Hull A"
     ],
     "mass": 387500,
     "beam": 15.5,
@@ -3913,7 +3912,7 @@
     "url": "https://robertsspaceindustries.com/pledge/ships/hull/Hull-D",
     "status": "In Concept",
     "loaners": [
-      "Caterpillar",
+      "Hull A",
       "C2 Hercules"
     ],
     "mass": 1216000,
@@ -3944,7 +3943,7 @@
     "url": "https://robertsspaceindustries.com/pledge/ships/hull/Hull-E",
     "status": "In Concept",
     "loaners": [
-      "Caterpillar",
+      "Hull A",
       "C2 Hercules"
     ],
     "mass": 1652000,
