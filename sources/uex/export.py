@@ -29,12 +29,15 @@ def export():
         if name is None:
             continue
         min_crew, max_crew = ship_crew_range(item['crew'])
+        url = None
+        if item['store_url']:
+            url = ship_url(item['store_url'])
         ship = {
             'source': 'uex',
             'name': name,
             'buy_auec': min_price(item['buy_at']),
             'rent_auec': min_price(item['rent_at']),
-            'url': ship_url(item['store_url']),
+            'url': url,
         }
         if item['price']:
             ship['buy_usd'] = integer(item['price'])
