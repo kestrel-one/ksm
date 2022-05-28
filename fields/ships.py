@@ -13,6 +13,8 @@ RE_URL_PREFIX = re.compile(r'^[a-z0-9]*:\/\/', re.IGNORECASE)
 
 SHIP_RENAME_MAP = {
     'Idris': 'Idris-M',
+    'Ares Inferno Starfighter': 'Ares Inferno',
+    'Ares Ion Starfighter': 'Ares Ion',
     'Retaliator': 'Retaliator Bomber',
     'F7C-M Hornet Heartseeker': 'F7C-M Super Hornet Heartseeker',
     'Dragonfly': 'Dragonfly Black',
