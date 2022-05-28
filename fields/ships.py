@@ -55,7 +55,6 @@ SHIP_SKIPPABLE = (
     'Nox Kue',
     'P-72 Archimedes Emerald',
     'PTV',
-    'Retaliator Base',
     'Sabre Comet',
     'Ursa Rover Fortuna',
     'Idris-K', # TODO: REMOVE WHEN RSI PAGE IS UP
