@@ -15,7 +15,7 @@ SHIP_RENAME_MAP = {
     'Idris': 'Idris-M',
     'Ares Inferno Starfighter': 'Ares Inferno',
     'Ares Ion Starfighter': 'Ares Ion',
-    'Retaliator': 'Retaliator Bomber',
+    'Retaliator Base': 'Retaliator',
     'F7C-M Hornet Heartseeker': 'F7C-M Super Hornet Heartseeker',
     'Dragonfly': 'Dragonfly Black',
     '600i': '600i Explorer',
