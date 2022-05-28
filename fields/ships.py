@@ -111,6 +111,8 @@ def ship_size(size, name):
             size = 'Small'
         elif name == 'Nomad':
             size = 'Medium'
+        elif name == 'Mule':
+            size = 'Small'
     if type(size) == int:
         size = str(size)
     if size in SHIP_SIZE_MAP:
