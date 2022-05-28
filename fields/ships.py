@@ -28,6 +28,7 @@ SHIP_RENAME_MAP = {
     'San tok.Yāi': "San'tok.yāi",
     'SanTokYai': "San'tok.yāi",
     'Mole': 'MOLE',
+    'MULE': 'Mule',
     'MPUV-1C': 'MPUV Cargo',
     'MPUV-1P': 'MPUV Personnel',
     'Genesis Starliner': 'Genesis',
