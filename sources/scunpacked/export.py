@@ -47,12 +47,14 @@ def export():
         class_name = item['ship']['ClassName']
         if '_BIS' in class_name:
             continue
-        if class_name.endswith('_Modifiers') or class_name.startswith('TEST_'):
+        if class_name.endswith('_Modifiers') or class_name.startswith('TEST_') or class_name.endswith('_FW22NFZ') or class_name.endswith('_SM_TE') or class_name.endswith('_Bombless'):
             # Not sure what these are but they were creating duplicate ships
             continue
         if class_name == 'AEGS_Idris_Distance_Destruction':
             continue
         name = ship_name(base_name)
+        if name == 'Retaliator':
+            name = 'Retaliator Bomber'
         if name is None:
             continue
         fix_vehicle_size(item)
