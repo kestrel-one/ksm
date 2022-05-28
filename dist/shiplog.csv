@@ -1,5 +1,30 @@
 Ship Name,Type,Old Value,New Value
-F7C Hornet,cargo,2,3
-MOLE,cargo,0,96
-Prospector,cargo,0,32
+C8 Pisces,size,Small,Snub
+C8X Pisces Expedition,size,Small,Snub
+HoverQuad,ins_std_claim_time,00:00:06,00:00:09
+HoverQuad,ins_exp_claim_time,00:00:00,00:00:03
+HoverQuad,ins_exp_cost,55,75
+Cutlass Steel,ins_std_claim_time,00:06:45,00:08:24
+Cutlass Steel,ins_exp_claim_time,00:02:15,00:02:48
+Cutlass Steel,ins_exp_cost,3375,4200
+P-52 Merlin,size,Small,Snub
+P-72 Archimedes,size,Small,Snub
+Hull A,ins_std_claim_time,00:00:42,00:01:48
+Hull A,ins_exp_claim_time,00:00:00,00:00:36
+Hull A,ins_exp_cost,360,900
+Retaliator Base,name,Retaliator Base,Retaliator
+Retaliator Base,url,https://robertsspaceindustries.com/pledge/ships/aegis-retaliator/Retaliator-Base,https://robertsspaceindustries.com/pledge/ships/aegis-retaliator/Retaliator
+Vulture,max_speed,-,1114
+Vulture,qt_speed,-,89383
+Vulture,cargo,12,16
+Vulture,has_gravlev,-,False
+Scorpius,status,In Concept,Flight Ready
+Scorpius,mass,-,97561.54
+Scorpius,scm_speed,-,218
+Scorpius,max_speed,-,1250
+Scorpius,qt_speed,-,138543
+Scorpius,buy_usd,220,240
+Scorpius,has_gravlev,-,False
+Mule,ship,-,added
+Legionnaire,ship,-,added
 

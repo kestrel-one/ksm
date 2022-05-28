@@ -1,5 +1,5 @@
 ACTIVATE=. .virtualenv/bin/activate
-VERSION=3.17.0-PTU
+VERSION=3.17.1
 
 all:
 	@echo "make [environment|clean]"
