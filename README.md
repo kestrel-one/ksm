@@ -89,7 +89,6 @@ $ ./ksm.py export -n '*hornet*' -g all -f json
     "min_crew": 1,
     "buy_auec": 1654100,
     "buy_usd": 125,
-    "rent_auec": null,
     "ins_std_claim_time": "00:06:45",
     "ins_exp_claim_time": "00:02:15",
     "ins_exp_cost": 3375,
@@ -139,9 +138,8 @@ Thanks
 ------
 
 KSM only aggregates, normalizes, and acts as a CLI to the data. A big thanks
-for the hard work by [scunpacked](https://scunpacked.com/),
-[SPAT](https://docs.google.com/spreadsheets/d/11nI-wLlRjDpsshkY8VLZkHh2jd2mCmWJTIE2VzqZ7ss),
-and [UEX](https://uexcorp.space/) to gather, tweak, and test Star Citizen data.
+for the hard work by [scunpacked](https://scunpacked.com/) and
+[SPAT](https://docs.google.com/spreadsheets/d/11nI-wLlRjDpsshkY8VLZkHh2jd2mCmWJTIE2VzqZ7ss).
 
 Just want the data?
 -------------------

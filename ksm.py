@@ -120,12 +120,15 @@ def xref(sources, col, fmt):
 @ click.option('-f', '--fmt', default='json', type=click.Choice(RENDERERS.keys()))
 @ click.option('-g', '--colgroups', multiple=True, type=click.Choice(FIELD_GROUPS.keys()))
 @ click.option('-s', '--sort', default=EXPORT_SORT, multiple=True, type=str, help='[column].[asc|desc] (eg: source.desc)')
-def export(names, cols, fmt, colgroups, sort):
+@ click.option('-r', '--flight-ready', default=False, is_flag=True)
+def export(names, cols, fmt, colgroups, sort, flight_ready):
     ships = [ship for ship in export_all() if match_name(ship, names)]
     ships = merge_fields(ships)
     cols = resolve_cols(cols, colgroups, 'all', no_source=True)
     sort_ships(ships, sort)
     exports = [filter_cols(ship, cols) for ship in ships]
+    if flight_ready:
+        exports = [ship for ship in ships if ship['status'] == 'Flight Ready']
     print(RENDERERS[fmt](exports, cols))
 
 

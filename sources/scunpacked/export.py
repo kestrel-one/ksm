@@ -4,6 +4,7 @@ import pathlib
 from collections import defaultdict
 
 from fields.ships import (
+    flatten_objects,
     ship_cargo,
     ship_manu_code,
     ship_manu_name,
@@ -29,17 +30,32 @@ def export():
         shops = json.load(f)
 
     ship_prices = defaultdict(list)
+    ship_rental_pct = defaultdict(lambda: defaultdict(list))
     for shop in shops:
         for inventory in shop['inventory']:
             if inventory.get('type') != 'NOITEM_Vehicle':
                 continue
-            if not inventory['shopSellsThis']:
-                continue
-            ship_prices[inventory['displayName']].append(inventory['basePrice'])
+            if inventory['shopSellsThis']:
+                ship_prices[ship_name(inventory['displayName'])].append(inventory['basePrice'])
+            if inventory['shopRentThis']:
+                for rental_template in inventory['rentalTemplates']:
+                    pct = float(rental_template['PercentageOfSalePrice'])
+                    if pct > 0:
+                        ship_rental_pct[ship_name(inventory['displayName'])][rental_template['RentalDuration']].append(pct)
     for ship, prices in ship_prices.items():
         if prices.count(prices[0]) != len(prices):
             raise ValueError('Uh oh! Base prices dont match for ship: %s' % ship)
         ship_prices[ship] = prices[0]
+    ship_rentals = defaultdict(lambda: defaultdict(dict))
+    for ship, days in ship_rental_pct.items():
+        ship_price = ship_prices[ship]
+        for day, pcts in days.items():
+            if not all(pct == pcts[0] for pct in pcts):
+                raise ValueError('Rental pct mismatch: %s (%s)' % (ship, pcts))
+            ship_rentals[ship][day] = int((pcts[0] * ship_price * day)/100)
+    for ship, days in ship_rentals.items():
+        ship_rentals[ship] = dict(days)
+    ship_rentals = dict(ship_rentals)
 
     exported_ships = []
     for _, item in ships.items():
@@ -77,8 +93,14 @@ def export():
             'ins_exp_claim_time': minutes(item['ship'].get('Insurance', {}).get('ExpeditedClaimTime'), True),
             'ins_exp_cost': integer(item['ship'].get('Insurance', {}).get('ExpeditedCost'), True),
         }
-        if base_name in ship_prices:
-            exported_ship['buy_auec'] = int(ship_prices.get(base_name))
+        if name in ship_prices:
+            exported_ship['buy_auec'] = int(ship_prices[name])
+        if name in ship_rentals:
+            rental = ship_rentals[name]
+            exported_ship['rent_auec_1day'] = rental[1]
+            exported_ship['rent_auec_3day'] = rental[3]
+            exported_ship['rent_auec_7day'] = rental[7]
+            exported_ship['rent_auec_30day'] = rental[30]
         exported_ships.append(exported_ship)
     return exported_ships
 

@@ -8,7 +8,7 @@ FIELD_GROUPS = {
     'dimensions': ('mass', 'beam', 'height', 'length'),
     'flight': ('scm_speed', 'max_speed', 'qt_speed'),
     'cargo': ('cargo', 'max_crew', 'min_crew'),
-    'prices': ('buy_auec', 'buy_usd', 'rent_auec'),
+    'prices': ('buy_auec', 'buy_usd', 'rent_auec_1day', 'rent_auec_3day', 'rent_auec_7day', 'rent_auec_30day'),
     'insurance': ('ins_std_claim_time', 'ins_exp_claim_time', 'ins_exp_cost'),
     'capabilities': ('has_quantum_drive', 'has_gravlev'),
 }
@@ -32,9 +32,12 @@ FIELD_SOURCES = {
     'loaners': ('prices',),
     'min_crew': ('spat', 'scunpacked', 'rsi'),
     'max_crew': ('spat', 'scunpacked', 'rsi'),
-    'buy_usd': ('prices', 'uex'),
-    'buy_auec': ('scunpacked', 'uex'),
-    'rent_auec': ('scunpacked', 'uex'),
+    'buy_usd': ('prices',),
+    'buy_auec': ('scunpacked',),
+    'rent_auec_1day': ('scunpacked',),
+    'rent_auec_3day': ('scunpacked',),
+    'rent_auec_7day': ('scunpacked',),
+    'rent_auec_30day': ('scunpacked',),
 }
 
 STATUS_LEVELS = {
