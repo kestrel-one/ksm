@@ -138,8 +138,9 @@ Thanks
 ------
 
 KSM only aggregates, normalizes, and acts as a CLI to the data. A big thanks
-for the hard work by [scunpacked](https://scunpacked.com/) and
-[SPAT](https://docs.google.com/spreadsheets/d/11nI-wLlRjDpsshkY8VLZkHh2jd2mCmWJTIE2VzqZ7ss).
+for the hard work by [scunpacked](https://scunpacked.com/),
+[SPAT](https://docs.google.com/spreadsheets/d/11nI-wLlRjDpsshkY8VLZkHh2jd2mCmWJTIE2VzqZ7ss),
+and the [Star Citizen wiki](https://starcitizen.tools/).
 
 Just want the data?
 -------------------
