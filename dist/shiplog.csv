@@ -1,30 +1,118 @@
 Ship Name,Type,Old Value,New Value
-C8 Pisces,size,Small,Snub
-C8X Pisces Expedition,size,Small,Snub
-HoverQuad,ins_std_claim_time,00:00:06,00:00:09
-HoverQuad,ins_exp_claim_time,00:00:00,00:00:03
-HoverQuad,ins_exp_cost,55,75
-Cutlass Steel,ins_std_claim_time,00:06:45,00:08:24
-Cutlass Steel,ins_exp_claim_time,00:02:15,00:02:48
-Cutlass Steel,ins_exp_cost,3375,4200
-P-52 Merlin,size,Small,Snub
-P-72 Archimedes,size,Small,Snub
-Hull A,ins_std_claim_time,00:00:42,00:01:48
-Hull A,ins_exp_claim_time,00:00:00,00:00:36
-Hull A,ins_exp_cost,360,900
-Retaliator Base,name,Retaliator Base,Retaliator
-Retaliator Base,url,https://robertsspaceindustries.com/pledge/ships/aegis-retaliator/Retaliator-Base,https://robertsspaceindustries.com/pledge/ships/aegis-retaliator/Retaliator
-Vulture,max_speed,-,1114
-Vulture,qt_speed,-,89383
-Vulture,cargo,12,16
-Vulture,has_gravlev,-,False
-Scorpius,status,In Concept,Flight Ready
-Scorpius,mass,-,97561.54
-Scorpius,scm_speed,-,218
-Scorpius,max_speed,-,1250
-Scorpius,qt_speed,-,138543
-Scorpius,buy_usd,220,240
-Scorpius,has_gravlev,-,False
-Mule,ship,-,added
-Legionnaire,ship,-,added
+Avenger Titan,rent_auec,15712,-
+Avenger Titan,rent_auec_1day,-,15712
+Avenger Titan,rent_auec_3day,-,41244
+Avenger Titan,rent_auec_7day,-,82488
+Avenger Titan,rent_auec_30day,-,294600
+Avenger Warlock,rent_auec,43331,-
+Avenger Warlock,rent_auec_1day,-,34665
+Avenger Warlock,rent_auec_3day,-,86662
+Avenger Warlock,rent_auec_7day,-,161770
+Avenger Warlock,rent_auec_30day,-,519975
+Retaliator Bomber,buy_auec,4031700,-
+Vanguard Warden,rent_auec,101634,-
+Vanguard Warden,rent_auec_1day,-,101634
+Vanguard Warden,rent_auec_3day,-,254085
+Vanguard Warden,rent_auec_7day,-,474292
+Vanguard Warden,rent_auec_30day,-,1524510
+Arrow,rent_auec,19446,-
+Arrow,rent_auec_1day,-,19446
+Arrow,rent_auec_3day,-,51045
+Arrow,rent_auec_7day,-,102091
+Arrow,rent_auec_30day,-,364612
+C8 Pisces,buy_usd,60,-
+Nox,rent_auec,5238,-
+Nox,rent_auec_1day,-,10476
+Nox,rent_auec_3day,-,26190
+Nox,rent_auec_7day,-,48888
+Nox,rent_auec_30day,-,157140
+Mustang Alpha,rent_auec,5028,-
+Mustang Alpha,rent_auec_1day,-,5028
+Mustang Alpha,rent_auec_3day,-,13198
+Mustang Alpha,rent_auec_7day,-,26397
+Mustang Alpha,rent_auec_30day,-,94275
+Mustang Gamma,rent_auec,18825,-
+Mustang Gamma,rent_auec_1day,-,18825
+Mustang Gamma,rent_auec_3day,-,47062
+Mustang Gamma,rent_auec_7day,-,87850
+Mustang Gamma,rent_auec_30day,-,282375
+Cutlass Black,rent_auec,27706,-
+Cutlass Black,rent_auec_1day,-,27706
+Cutlass Black,rent_auec_3day,-,72728
+Cutlass Black,rent_auec_7day,-,145456
+Cutlass Black,rent_auec_30day,-,519487
+Cutlass Blue,buy_auec,2493500,-
+Cutlass Red,buy_auec,1810500,-
+Dragonfly Black,rent_auec,5454,-
+Dragonfly Black,rent_auec_1day,-,5454
+Dragonfly Black,rent_auec_3day,-,14316
+Dragonfly Black,rent_auec_7day,-,28633
+Dragonfly Black,rent_auec_30day,-,102262
+ROC,rent_auec,4299,-
+ROC,rent_auec_1day,-,3440
+ROC,rent_auec_3day,-,9030
+ROC,rent_auec_7day,-,18060
+ROC,rent_auec_30day,-,64500
+Freelancer,rent_auec,33952,-
+Freelancer,rent_auec_1day,-,33952
+Freelancer,rent_auec_3day,-,89124
+Freelancer,rent_auec_7day,-,178248
+Freelancer,rent_auec_30day,-,636600
+Prospector,rent_auec,41220,-
+Prospector,rent_auec_1day,-,41220
+Prospector,rent_auec_3day,-,108202
+Prospector,rent_auec_7day,-,216405
+Prospector,rent_auec_30day,-,772875
+Razor,rent_auec,52836,-
+Razor,rent_auec_1day,-,52836
+Razor,rent_auec_3day,-,132090
+Razor,rent_auec_7day,-,246568
+Razor,rent_auec_30day,-,792540
+300i,rent_auec,23016,-
+300i,rent_auec_1day,-,23016
+300i,rent_auec_3day,-,57540
+300i,rent_auec_7day,-,107408
+300i,rent_auec_30day,-,345240
+600i Explorer,rent_auec,142126,-
+600i Explorer,rent_auec_1day,-,284253
+600i Explorer,rent_auec_3day,-,710632
+600i Explorer,rent_auec_7day,-,1326514
+600i Explorer,rent_auec_30day,-,4263795
+85X,rent_auec,14362,-
+85X,rent_auec_1day,-,11490
+85X,rent_auec_3day,-,30161
+85X,rent_auec_7day,-,60322
+85X,rent_auec_30day,-,215437
+M50,rent_auec,35814,-
+M50,rent_auec_1day,-,35814
+M50,rent_auec_3day,-,89535
+M50,rent_auec_7day,-,167132
+M50,rent_auec_30day,-,537210
+Aurora ES,rent_auec,2482,-
+Aurora ES,rent_auec_1day,-,2482
+Aurora ES,rent_auec_3day,-,6515
+Aurora ES,rent_auec_7day,-,13030
+Aurora ES,rent_auec_30day,-,46537
+Aurora LN,rent_auec,8447,-
+Aurora LN,rent_auec_1day,-,6768
+Aurora LN,rent_auec_3day,-,17766
+Aurora LN,rent_auec_7day,-,35532
+Aurora LN,rent_auec_30day,-,126900
+Constellation Andromeda,rent_auec,70960,-
+Constellation Andromeda,rent_auec_1day,-,70960
+Constellation Andromeda,rent_auec_3day,-,186270
+Constellation Andromeda,rent_auec_7day,-,372540
+Constellation Andromeda,rent_auec_30day,-,1330500
+Constellation Phoenix,rent_auec,84882,-
+Constellation Phoenix,rent_auec_1day,-,169764
+Constellation Phoenix,rent_auec_3day,-,424410
+Constellation Phoenix,rent_auec_7day,-,792232
+Constellation Phoenix,rent_auec_30day,-,2546460
+Scorpius,loaners,"['F7C-M Super Hornet', 'Hurricane']",[]
+Cyclone,rent_auec,551,-
+Cyclone,rent_auec_1day,-,530
+Cyclone,rent_auec_3day,-,1391
+Cyclone,rent_auec_7day,-,2782
+Cyclone,rent_auec_30day,-,9937
+Merchantman,buy_usd,550,600
 
