@@ -1,6 +1,7 @@
 import json
 import pathlib
 import re
+from collections import defaultdict
 
 from fields.ships import (
     ship_name,
@@ -15,19 +16,41 @@ RE_PRICE = re.compile('[^0-9\.]')
 
 
 def export():
+    data = {}
     with open(DATA_PATH, 'r') as f:
-        items = json.load(f)
+        data = json.load(f)
+    rentals = process_rentals(data['rentals'])
     ships = []
-    for item in items:
-        name = ship_name(item['name'])
+    for vehicle in data['vehicles']:
+        name = ship_name(vehicle['name'])
         if name is None:
             continue
-        ships.append({
+        exported = {
             'source': 'scwiki',
             'name': name,
-            'buy_usd': parse_price(item['standalone_cost']),
-            'loaners': parse_loaners(item['loaner']),
-        })
+            'buy_usd': parse_price(vehicle['standalone_cost']),
+            'loaners': parse_loaners(vehicle['loaner']),
+        }
+        if name in rentals:
+            rental = rentals[name]
+            exported['rent_auec_1day'] = rental['1day'][0]
+            exported['rent_auec_3day'] = rental['3day'][0]
+            exported['rent_auec_7day'] = rental['7day'][0]
+            exported['rent_auec_30day'] = rental['30day'][0]
+        ships.append(exported)
+    return ships
+
+
+def process_rentals(rentals):
+    ships = {}
+    for rental in rentals:
+        name = ship_name(rental['ship'])
+        if not name in ships:
+            ships[name] = {'1day': [], '3day': [], '7day': [], '30day': []}
+        ships[name]['1day'].append(integer(rental['1day']))
+        ships[name]['3day'].append(integer(rental['3day']))
+        ships[name]['7day'].append(integer(rental['7day']))
+        ships[name]['30day'].append(integer(rental['30day']))
     return ships
 
 

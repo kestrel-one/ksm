@@ -10,7 +10,7 @@ def integer(value, optional=False):
     if t == int:
         return value
     elif t == str:
-        return int(value)
+        return int(value.replace(',', ''))
     raise TypeError('Unknown number type: %s' % t)
 
 
