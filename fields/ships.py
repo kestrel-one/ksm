@@ -109,6 +109,10 @@ def ship_name(name):
     name = RE_CRUSADER_STAR.sub('', name)
     name = RE_STARFIGHTER.sub('Ares', name)
     name = SHIP_RENAME_MAP.get(name, name)
+    if name == 'drak_cutlass_red_update':
+        name = 'Cutlass Red'
+    if name == 'drak_cutlass_blue_update':
+        name = 'Cutlass Blue'
     return None if is_skippable_ship_name(name) else name
 
 

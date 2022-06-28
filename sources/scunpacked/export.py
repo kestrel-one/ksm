@@ -33,15 +33,24 @@ def export():
     ship_rental_pct = defaultdict(lambda: defaultdict(list))
     for shop in shops:
         for inventory in shop['inventory']:
-            if inventory.get('type') != 'NOITEM_Vehicle':
+            type_ = inventory.get('type')
+            name = inventory.get('name')
+            displayName = inventory.get('displayName')
+            if name == 'drak_cutlass_red_update':
+                displayName = 'Drake Cutlass Red'
+                type_ = 'NOITEM_Vehicle'
+            elif name == 'drak_cutlass_blue_update':
+                displayName = 'Drake Cutlass Blue'
+                type_ = 'NOITEM_Vehicle'
+            elif type_ != 'NOITEM_Vehicle':
                 continue
             if inventory['shopSellsThis']:
-                ship_prices[ship_name(inventory['displayName'])].append(inventory['basePrice'])
+                ship_prices[ship_name(displayName)].append(inventory['basePrice'])
             if inventory['shopRentThis']:
                 for rental_template in inventory['rentalTemplates']:
                     pct = float(rental_template['PercentageOfSalePrice'])
                     if pct > 0:
-                        ship_rental_pct[ship_name(inventory['displayName'])][rental_template['RentalDuration']].append(pct)
+                        ship_rental_pct[ship_name(displayName)][rental_template['RentalDuration']].append(pct)
     for ship, prices in ship_prices.items():
         if prices.count(prices[0]) != len(prices):
             raise ValueError('Uh oh! Base prices dont match for ship: %s' % ship)
