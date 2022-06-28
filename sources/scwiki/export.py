@@ -23,7 +23,7 @@ def export():
         if name is None:
             continue
         ships.append({
-            'source': 'prices',
+            'source': 'scwiki',
             'name': name,
             'buy_usd': parse_price(item['standalone_cost']),
             'loaners': parse_loaners(item['loaner']),
