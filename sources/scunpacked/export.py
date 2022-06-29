@@ -1,4 +1,5 @@
 import json
+import math
 import pathlib
 
 from collections import defaultdict
@@ -61,7 +62,7 @@ def export():
         for day, pcts in days.items():
             if not all(pct == pcts[0] for pct in pcts):
                 raise ValueError('Rental pct mismatch: %s (%s)' % (ship, pcts))
-            ship_rentals[ship][day] = int((pcts[0] * ship_price * day)/100)
+            ship_rentals[ship][day] = math.ceil((pcts[0] * ship_price * day)/100)
     for ship, days in ship_rentals.items():
         ship_rentals[ship] = dict(days)
     ship_rentals = dict(ship_rentals)
@@ -103,7 +104,7 @@ def export():
             'ins_exp_cost': integer(item['ship'].get('Insurance', {}).get('ExpeditedCost'), True),
         }
         if name in ship_prices:
-            exported_ship['buy_auec'] = int(ship_prices[name])
+            exported_ship['buy_auec'] = math.ceil(ship_prices[name])
         if name in ship_rentals:
             rental = ship_rentals[name]
             exported_ship['rent_auec_1day'] = rental[1]
