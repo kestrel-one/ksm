@@ -1,12 +1,16 @@
 def compare_ship_lists(old_ships, new_ships):
-    old_index = compare_index(old_ships, 'id')
-    new_index = compare_index(new_ships, 'id')
+    old_indexes = compare_index(old_ships, 'id')
+    new_indexes = compare_index(new_ships, 'id')
     diffs = []
     for old_ship in old_ships:
-        new_ship = new_ships[new_index[old_ship['id']]]
+        old_ship_id = old_ship['id']
+        if old_ship_id not in new_indexes:
+            continue
+        new_index = new_indexes[old_ship_id]
+        new_ship = new_ships[new_index]
         diffs.extend(compare_ships(old_ship, new_ship))
     for new_ship in new_ships:
-        if new_ship['id'] not in old_index:
+        if new_ship['id'] not in old_indexes:
             diffs.append({
                 'Ship Name': new_ship['name'],
                 'Type': 'ship',
