@@ -62,27 +62,16 @@ SHIP_SKIPPABLE = (
 )
 
 SHIP_NOT_BUYABLE = (
-    '400i',
-    'A2 Hercules',
-    'Ares Inferno',
-    'Ares Ion',
-    'Cyclone MT',
-    'Cyclone MT',
+    'Centurion',
     'Glaive',
     'Hull A',
     'Mule',
     'Mustang Omega',
-    'P-72 Archimedes',
-    'RAFT',
-    'Redeemer',
     'Retaliator Bomber',
     'Sabre Raven',
     'Scorpius',
     'Scythe',
-    'Spartan',
-    'Cutlass Steel',
     'C8 Pisces',
-    'HoverQuad',
 )
 
 SHIP_SIZE_MAP = {
