@@ -24,8 +24,11 @@ def export():
     ships = []
     for item in items:
         ship = item_to_ship(item)
-        if ship is not None:
-            ships.append(ship)
+        if ship is None:
+            continue
+        if ship['name'] == 'Retaliator':
+            continue
+        ships.append(ship)
     return ships
 
 

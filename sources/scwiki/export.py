@@ -25,6 +25,8 @@ def export():
         name = ship_name(vehicle['name'])
         if name is None:
             continue
+        if name == 'Retaliator':
+            continue
         exported = {
             'source': 'scwiki',
             'name': name,
