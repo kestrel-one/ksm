@@ -73,7 +73,15 @@ def export():
         class_name = item['ship']['ClassName']
         if '_BIS' in class_name:
             continue
-        if class_name.endswith('_Modifiers') or class_name.startswith('TEST_') or class_name.endswith('_FW22NFZ') or class_name.endswith('_SM_TE') or class_name.endswith('_Bombless'):
+        if class_name.endswith('_Modifiers') or \
+            class_name.startswith('TEST_') or \
+            class_name.endswith('_FW22NFZ') or \
+            class_name.endswith('_SM_TE') or \
+            class_name.endswith('_Bombless') or \
+            class_name.endswith('_CINEMATIC_ONLY') or \
+            class_name.endswith('_PiercingTest') or \
+            class_name.endswith('_Refuel_Testing') or \
+            class_name.endswith('_Valiant'):
             # Not sure what these are but they were creating duplicate ships
             continue
         if class_name == 'AEGS_Idris_Distance_Destruction':
