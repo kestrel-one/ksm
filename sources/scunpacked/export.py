@@ -106,11 +106,8 @@ def export():
 
             'has_quantum_drive': decimal(item['ship']['QuantumTravel']['Speed']) > 0,
             'has_gravlev': item['ship'].get('IsGravlev', False),
-
-            'ins_std_claim_time': minutes(item['ship'].get('Insurance', {}).get('StandardClaimTime'), True),
-            'ins_exp_claim_time': minutes(item['ship'].get('Insurance', {}).get('ExpeditedClaimTime'), True),
-            'ins_exp_cost': integer(item['ship'].get('Insurance', {}).get('ExpeditedCost'), True),
         }
+        add_insurance(exported_ship, item)
         if name in ship_prices:
             exported_ship['buy_auec'] = math.ceil(ship_prices[name])
         if name in ship_rentals:
@@ -121,6 +118,29 @@ def export():
             exported_ship['rent_auec_30day'] = rental[30]
         exported_ships.append(exported_ship)
     return exported_ships
+
+
+def add_insurance(ship, item):
+    ship_name = ship['name']
+    claim_time = item['ship'].get('Insurance', {}).get('StandardClaimTime')
+    exp_time = item['ship'].get('Insurance', {}).get('ExpeditedClaimTime')
+    exp_cost = item['ship'].get('Insurance', {}).get('ExpeditedCost')
+    if claim_time is None:
+        if ship_name == 'Scorpius':
+            claim_time = 10.125
+            exp_time = 3.375
+            exp_cost = 5065
+        if ship_name == 'Mule':
+            claim_time = 0.135
+            exp_time = 0.045
+            exp_cost = 70
+        if ship_name == 'Centurion':
+            claim_time = 0.75
+            exp_time = 0.0
+            exp_cost = 350
+    ship['ins_std_claim_time'] = minutes(claim_time, True)
+    ship['ins_exp_claim_time'] = minutes(exp_time, True)
+    ship['ins_exp_cost'] = integer(exp_cost, True)
 
 
 def fix_vehicle_size(item):
